@@ -90,7 +90,18 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-    animation: fadeIn 0.6s ease-out;
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+  }
+
+  /* Prevent flash of unstyled content */
+  .motion-prevent-flash {
+    opacity: 0;
+  }
+
+  /* Show content when JS loads */
+  .motion-allow-flash {
+    opacity: 1;
   }
   
   html {
