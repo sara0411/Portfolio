@@ -2,50 +2,61 @@
 
 import React, { createContext, useContext, useEffect, useState } from 'react'
 
-type Theme = 'light' | 'dark'
-
 interface ThemeContextType {
-  theme: Theme
+  theme: 'light' | 'dark'
   toggleTheme: () => void
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('light')
+  // Set dark mode as default to prevent flash
+  const [theme, setTheme] = useState<'light' | 'dark'>('dark')
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    // Check for saved theme preference or default to system preference
-    const savedTheme = localStorage.getItem('theme') as Theme
-    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-    const initialTheme = savedTheme || systemTheme
-    
-    setTheme(initialTheme)
     setMounted(true)
+    
+    // Check for saved theme preference or default to dark
+    const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+    
+    // Default to dark mode to prevent flash
+    const initialTheme = savedTheme || (prefersDark ? 'dark' : 'dark')
+    setTheme(initialTheme)
+    
+    // Apply theme immediately
+    if (initialTheme === 'dark') {
+      document.documentElement.classList.add('dark')
+      document.documentElement.setAttribute('data-theme', 'dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+      document.documentElement.setAttribute('data-theme', 'light')
+    }
   }, [])
 
-  useEffect(() => {
-    if (mounted) {
-      localStorage.setItem('theme', theme)
-      document.documentElement.setAttribute('data-theme', theme)
-      
-      // Also update class for Tailwind CSS dark mode
-      if (theme === 'dark') {
-        document.documentElement.classList.add('dark')
-      } else {
-        document.documentElement.classList.remove('dark')
-      }
-    }
-  }, [theme, mounted])
-
   const toggleTheme = () => {
-    setTheme(prev => prev === 'light' ? 'dark' : 'light')
+    const newTheme = theme === 'light' ? 'dark' : 'light'
+    setTheme(newTheme)
+    
+    if (newTheme === 'dark') {
+      document.documentElement.classList.add('dark')
+      document.documentElement.setAttribute('data-theme', 'dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+      document.documentElement.setAttribute('data-theme', 'light')
+    }
+    
+    localStorage.setItem('theme', newTheme)
   }
 
-  // Prevent hydration mismatch
+  // Prevent hydration mismatch by not rendering until mounted
   if (!mounted) {
-    return <>{children}</>
+    return (
+      <div className="dark">
+        {children}
+      </div>
+    )
   }
 
   return (

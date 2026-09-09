@@ -2,207 +2,120 @@
 
 @layer base {
   :root {
-    /* Light theme - Exact Color Hunt Palette */
-    /* #EBE8DB - Cream background */
-    --background: 38 17% 91%;
-    --card: 38 17% 93%;
-    --popover: 38 17% 91%;
-    
-    /* #3D0301 - Dark burgundy text */
-    --foreground: 1 88% 12%;
-    --card-foreground: 1 88% 12%;
-    --popover-foreground: 1 88% 12%;
-    
-    /* #D76C82 - Rose pink accent */
-    --accent: 347 58% 64%;
-    --accent-foreground: 38 17% 91%;
-    --ring: 347 58% 64%;
-    
-    /* #B03052 - Deep rose primary */
-    --primary: 343 56% 44%;
-    --primary-foreground: 38 17% 91%;
-    
-    /* Muted versions using the palette */
-    --muted: 38 17% 88%;
-    --muted-foreground: 343 30% 35%;
-    --secondary: 38 17% 88%;
-    --secondary-foreground: 1 88% 12%;
-    --border: 38 17% 85%;
-    --input: 38 17% 85%;
-    
-    /* Additional accent variations */
-    --accent-light: 347 58% 74%;
-    --accent-dark: 343 56% 44%;
-    
+    /* Refined technical light mode */
+    --background: 210 20% 98%;      /* #f8fafc Slate-50 */
+    --foreground: 222 47% 11%;      /* #0f172a Slate-900 */
+    --card: 0 0% 100%;              /* #ffffff Pure white */
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 221 83% 53%;         /* #2563eb Technical Blue */
+    --primary-foreground: 210 40% 98%;
+    --secondary: 215 16% 47%;       /* #64748b Slate-500 */
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 96%;           /* #f1f5f9 Slate-100 */
+    --muted-foreground: 215 16% 47%; /* #64748b */
+    --accent: 221 83% 53%;          /* #2563eb */
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 217 91% 60%;
+    --accent-dark: 224 76% 48%;
     --destructive: 0 84% 60%;
-    --destructive-foreground: 38 17% 91%;
-    --radius: 0.75rem;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214 32% 91%;          /* #e2e8f0 Slate-200 */
+    --input: 214 32% 91%;
+    --ring: 221 83% 53%;
+    --radius: 0.5rem;
   }
 
   .dark {
-    /* Dark theme - Warm sophisticated palette to complement light mode */
-    /* Deep warm burgundy base - inverted from light theme */
-    --background: 1 30% 8%;        /* Very dark burgundy, not pure black */
-    --card: 1 25% 11%;             /* Slightly lighter warm dark */
-    --popover: 1 30% 8%;
-    
-    /* Warm cream text - matches light mode background */
-    --foreground: 38 15% 92%;      /* Warm off-white, not stark white */
-    --card-foreground: 38 15% 92%;
-    --popover-foreground: 38 15% 92%;
-    
-    /* Rose accent - slightly brighter for dark mode visibility */
-    --accent: 347 65% 70%;         /* Brighter rose for better contrast */
-    --accent-foreground: 1 30% 8%;  /* Dark text on bright accent */
-    --ring: 347 65% 70%;
-    
-    /* Primary rose - enhanced for dark mode */
-    --primary: 343 60% 58%;        /* Brighter primary for visibility */
-    --primary-foreground: 38 15% 92%;
-    
-    /* Warm muted tones - not gray */
-    --muted: 1 20% 14%;            /* Warm dark muted */
-    --muted-foreground: 38 10% 68%; /* Warm muted text */
-    --secondary: 1 20% 14%;
-    --secondary-foreground: 38 15% 92%;
-    --border: 1 15% 22%;           /* Warm border color */
-    --input: 1 18% 16%;            /* Warm input background */
-    
-    /* Enhanced accent variations for dark mode */
-    --accent-light: 347 65% 78%;   /* Lighter rose */
-    --accent-dark: 343 55% 48%;    /* Darker rose */
-    
-    --destructive: 0 70% 60%;
-    --destructive-foreground: 38 15% 92%;
+    /* Sophisticated deep dark mode - focused, technical, high contrast */
+    --background: 222 47% 7%;       /* #090d16 Deep obsidian slate */
+    --foreground: 210 40% 98%;      /* #f8fafc Slate-50 */
+    --card: 222 47% 10%;            /* #0f172a Deep slate card */
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 10%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217 91% 60%;         /* #3b82f6 Crisp Azure */
+    --primary-foreground: 222 47% 7%;
+    --secondary: 217 19% 27%;       /* #334155 Slate-700 */
+    --secondary-foreground: 210 40% 98%;
+    --muted: 223 47% 12%;           /* #111b2e Dark muted container */
+    --muted-foreground: 215 20% 65%; /* #94a3b8 Crisp muted text */
+    --accent: 217 91% 60%;          /* #3b82f6 Vibrant technical blue */
+    --accent-foreground: 222 47% 7%;
+    --accent-light: 213 94% 68%;
+    --accent-dark: 221 83% 53%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217 33% 17%;          /* #1e293b Slate-800 */
+    --input: 217 33% 17%;
+    --ring: 217 91% 60%;
   }
 
   * {
     border-color: hsl(var(--border));
   }
-  
+
   body {
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
-    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
-    line-height: 1.7;
-    font-weight: 400;
-    letter-spacing: -0.025em;
+    font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+    line-height: 1.6;
+    letter-spacing: -0.011em;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-    opacity: 0;
-    transition: opacity 0.3s ease-out;
   }
 
-  /* Prevent flash of unstyled content */
-  .motion-prevent-flash {
-    opacity: 0;
-  }
-
-  /* Show content when JS loads */
-  .motion-allow-flash {
-    opacity: 1;
-  }
-  
   html {
     scroll-behavior: smooth;
   }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
+
+  @media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
     }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-}
-
-@layer components {
-  /* Clean, minimal component styles */
-  .subtle-shadow {
-    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
-    transition: box-shadow 0.3s ease;
-  }
-
-  .subtle-shadow:hover {
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-  }
-
-  /* Direct Color Hunt palette classes */
-  .color-hunt-cream {
-    background-color: #EBE8DB;
-    color: #3D0301;
-  }
-  
-  .color-hunt-rose {
-    background-color: #D76C82;
-    color: #EBE8DB;
-  }
-  
-  .color-hunt-deep-rose {
-    background-color: #B03052;
-    color: #EBE8DB;
-  }
-  
-  .color-hunt-burgundy {
-    background-color: #3D0301;
-    color: #EBE8DB;
-  }
-
-  /* Dark mode enhanced classes */
-  .dark .enhanced-card {
-    background: linear-gradient(135deg, 
-      hsl(var(--card)) 0%, 
-      hsl(1 20% 13%) 100%);
-    border: 1px solid hsl(var(--border));
-  }
-
-  .dark .enhanced-border {
-    border-color: hsl(1 15% 25%);
-  }
-
-  .dark .warm-glow {
-    box-shadow: 0 4px 20px hsl(var(--accent) / 0.15);
-  }
-
-  .dark .subtle-warm-bg {
-    background: linear-gradient(135deg, 
-      hsl(1 25% 12%) 0%, 
-      hsl(1 20% 14%) 100%);
   }
 }
 
 @layer utilities {
+  /* Editorial subtle grid pattern for technical background */
+  .technical-grid {
+    background-size: 32px 32px;
+    background-image: linear-gradient(to right, hsl(var(--border) / 0.35) 1px, transparent 1px),
+                      linear-gradient(to bottom, hsl(var(--border) / 0.35) 1px, transparent 1px);
+  }
+
   /* Custom scrollbar */
   ::-webkit-scrollbar {
     width: 6px;
+    height: 6px;
   }
 
   ::-webkit-scrollbar-track {
-    background-color: hsl(var(--muted));
+    background-color: hsl(var(--background));
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: hsl(var(--muted-foreground));
+    background-color: hsl(var(--border));
     border-radius: 9999px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background-color: hsl(var(--accent));
+    background-color: hsl(var(--muted-foreground) / 0.6);
   }
 
-  /* Focus styles */
+  /* Focus rings */
   :focus-visible {
-    outline: 2px solid hsl(var(--accent));
+    outline: 2px solid hsl(var(--primary));
     outline-offset: 2px;
   }
 
-  /* Selection styles */
   ::selection {
-    background-color: hsl(var(--accent) / 0.3);
-    color: hsl(var(--background));
+    background-color: hsl(var(--primary) / 0.25);
+    color: hsl(var(--foreground));
   }
 }
