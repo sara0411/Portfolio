@@ -21,7 +21,7 @@ Projects read as full-width case notes with context, Sara's contribution, implem
 - Sara supplied the portrait stored at `public/sara-ferraa.jpg`.
 - Public source links are shown for the AI Log Analyzer and Recruitment CV Management Platform. Private projects do not show a misleading repository link.
 - Confirm that `public/resume.pdf` is current before release.
-- Confirm the LinkedIn URL before release.
+- Sara confirmed the LinkedIn profile URL: `https://www.linkedin.com/in/sara-ferraa-0aa73623a/`.
 
 ## Checks
 

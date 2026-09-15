@@ -58,7 +58,7 @@ export const PORTFOLIO_DATA = {
     bioShort: "My work includes Java and Spring Boot backends, React and Next.js interfaces, and mobile applications built with Flutter and React Native. I am currently a Software Engineering Intern at Automai.",
     email: "ferraasara1@gmail.com",
     github: "https://github.com/sara0411",
-    linkedin: "https://linkedin.com/in/saraferraa",
+    linkedin: "https://www.linkedin.com/in/sara-ferraa-0aa73623a/",
     resumeUrl: "/resume.pdf",
     location: "Casablanca, Morocco",
     availability: "Software Engineering Intern at Automai",
