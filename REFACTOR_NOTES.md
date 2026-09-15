@@ -14,13 +14,13 @@ Projects read as full-width case notes with context, Sara's contribution, implem
 
 ## Content status
 
-- `profile.md` is the factual source for portfolio copy.
+- `profile.md` is the factual source for public portfolio copy and was refreshed with Sara's latest career context.
 - Sara confirmed that her Deloitte internship ended at the end of July 2026.
 - Sara confirmed that she is currently a Software Engineering Intern at Automai.
-- The Automai start date, responsibilities, and technologies remain omitted until Sara provides them.
+- Sara provided her Automai dates and public experience summary: guided authoring ownership across C# and WinForms UI, persistence, code generation, and runtime integration; approximately 30 defect fixes; save-and-resume delivery; documentation and runtime contract reconciliation; and release-blocking fresh-install diagnosis.
 - Sara supplied the portrait stored at `public/sara-ferraa.jpg`.
 - Public source links are shown for the AI Log Analyzer and Recruitment CV Management Platform. Private projects do not show a misleading repository link.
-- Confirm that `public/resume.pdf` is current before release.
+- The placeholder resume was removed from the public site. Add a resume link only after Sara provides her current CV.
 - Sara confirmed the LinkedIn profile URL: `https://www.linkedin.com/in/sara-ferraa-0aa73623a/`.
 
 ## Checks
@@ -43,7 +43,7 @@ Browser checks cover desktop and mobile layouts, horizontal overflow, portrait l
 ### Verification completed in the editing environment
 
 - ESLint, TypeScript, and the optimized Next.js production build passed.
-- The production smoke test passed for server-rendered content, section anchors, project entries, theme setup, portrait, contact, metadata, resume PDF, and site icon.
+- The production smoke test passed for server-rendered content, section anchors, project entries, theme setup, portrait, job-search positioning, contact, metadata, and site icon.
 - Desktop layout verification passed with no horizontal overflow, a loaded portrait, and no browser console errors or warnings.
 - Mobile layout verification passed at the narrow responsive breakpoint with no horizontal overflow. The desktop navigation was hidden, the mobile menu was available, and Escape closed the menu and returned focus to its control.
 - Keyboard verification passed for the first-tab skip link, its visible focus outline, and focus transfer to the main content.

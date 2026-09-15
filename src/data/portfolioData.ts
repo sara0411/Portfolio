@@ -9,7 +9,7 @@ export interface Project {
   evidence: string;
   technologies: string[];
   status: "Completed" | "Active Development" | "Deployed";
-  githubUrl: string;
+  githubUrl?: string;
   liveUrl?: string;
 }
 
@@ -55,47 +55,52 @@ export const PORTFOLIO_DATA = {
     portrait: "/sara-ferraa.jpg",
     title: "Software Engineer",
     secondaryTitle: "Backend · Full Stack · Mobile · Applied AI · Enterprise Automation",
-    bioShort: "My work includes Java and Spring Boot backends, React and Next.js interfaces, and mobile applications built with Flutter and React Native. I am currently a Software Engineering Intern at Automai.",
+    bioShort: "I am a recent software engineering graduate and current Software Engineering Intern at Automai. My work spans backend systems, enterprise applications, product interfaces, and applied AI.",
     email: "ferraasara1@gmail.com",
     github: "https://github.com/sara0411",
     linkedin: "https://www.linkedin.com/in/sara-ferraa-0aa73623a/",
-    resumeUrl: "/resume.pdf",
     location: "Casablanca, Morocco",
-    availability: "Software Engineering Intern at Automai",
+    availability: "Backend and Enterprise Software Engineering",
   },
 
   about: {
     paragraphs: [
-      "I am a software engineer with experience across backend and full-stack development, mobile applications, applied AI, and enterprise automation. My work includes Java and Spring Boot systems, Node.js and Express APIs, React and Next.js interfaces, and mobile products built with Flutter and React Native.",
-      "My previous IT and Software Asset Management work at Deloitte covered IBM licensing, ServiceNow SAM Pro, BigFix, enterprise reporting, and related governance processes. That experience complements my engineering work with an understanding of how software is operated, tracked, and governed in enterprise environments.",
+      "I am a recent software engineering graduate from EMSI Casablanca. I work across backend and full-stack development, mobile applications, applied AI, and enterprise automation, with Java and Spring Boot as my primary backend stack.",
+      "At Automai, I am responsible for a guided authoring feature in a C# and WinForms desktop application. The work crosses UI, persistence, code generation, and the separate runtime that executes generated automation.",
+      "My Deloitte internship combined Software Asset Management work with engineering. I worked with IBM licensing environments, ServiceNow SAM Pro, and BigFix while building an internal Spring Boot learning platform with local RAG, document processing, and reporting workflows.",
     ],
   },
 
   experience: [
     {
-      period: "Present",
+      period: "August 2026 to present",
       role: "Software Engineering Intern",
       organization: "Automai",
       type: "Software Engineering",
-      highlights: [],
-      skills: [],
+      highlights: [
+        "Responsible for a guided authoring feature that compiles user-taught workflows into automation executed by a separate runtime, working across UI, persistence, and code generation.",
+        "Improved reliability ahead of release by tracing generated output through its consuming runtime and root-causing and fixing approximately 30 defects.",
+        "Shipped save-and-resume support to replace a flow that forced users to discard unfinished work.",
+        "Reconciled the feature with its documentation and runtime contract, then helped unblock a release by tracing a fresh-install build failure that left a core service non-functional.",
+      ],
+      skills: ["C#", "WinForms", "Persistence", "Code Generation", "Runtime Integration", "Debugging"],
     },
     {
-      period: "Ended July 2026",
-      role: "IT & Software Asset Management Intern",
+      period: "February to July 2026",
+      role: "Software Asset Management Intern",
       organization: "Deloitte Extended Services Morocco",
       type: "Enterprise Platform",
       highlights: [
         "Worked with IBM software licensing environments, including ILMT, BigFix, and Passport Advantage concepts.",
         "Used ServiceNow SAM Pro, Flexera, USU, and Active Directory for software and IT asset work.",
         "Performed contract and licensing analysis and built reporting with Power BI, Excel, and VBA.",
-        "Designed and built a Spring Boot e-learning platform for internal SAM and ITAM training.",
+        "Designed and built a Spring Boot learning platform with role-based modules, assessment, local RAG, document processing, and reporting workflows.",
       ],
-      skills: ["IBM Licensing", "ILMT", "BigFix", "ServiceNow SAM Pro", "Power BI", "VBA", "FinOps"],
+      skills: ["Java", "Spring Boot", "ServiceNow SAM Pro", "IBM Licensing", "BigFix", "LangChain4j", "Power BI"],
     },
     {
       period: "Previous",
-      role: "Software Engineer",
+      role: "Software Engineering Intern",
       organization: "SLTVerse",
       type: "Software Engineering",
       highlights: [
@@ -107,7 +112,7 @@ export const PORTFOLIO_DATA = {
     },
     {
       period: "Previous",
-      role: "Software Developer",
+      role: "Software Developer Intern",
       organization: "Attijariwafa Bank",
       type: "Software Engineering",
       highlights: [
@@ -124,10 +129,10 @@ export const PORTFOLIO_DATA = {
       title: "AI Log Analyzer",
       tagline: "Sequence model for classifying anomalous system log behavior.",
       category: "Machine Learning",
-      problem: "The project explored how to classify security-focused system log data while improving the quality of the source dataset used for evaluation.",
-      contribution: "Prepared and improved the source dataset, then developed and evaluated the sequence-model pipeline for log classification.",
+      problem: "The academic project explored how to classify security-focused behavior in approximately 1 GB of system logs while improving the quality of the source data used for evaluation.",
+      contribution: "Worked in a two-person team to prepare the dataset and develop and evaluate the sequence-model pipeline for log classification.",
       solution: "Processed Syslog data and applied NLP with LSTM and BiLSTM sequence models. The reported evaluation reached approximately 91.3% accuracy.",
-      evidence: "Approximately 91.3% reported evaluation accuracy",
+      evidence: "Approximately 1 GB of logs and 91.3% reported evaluation accuracy",
       technologies: ["Python", "LSTM", "BiLSTM", "NLP", "Machine Learning"],
       status: "Completed",
       githubUrl: "https://github.com/sara0411/cybersec-log-analyzer",
@@ -143,20 +148,18 @@ export const PORTFOLIO_DATA = {
       evidence: "More than 40 backend API endpoints",
       technologies: ["Next.js", "React", "TypeScript", "Supabase", "Recharts"],
       status: "Completed",
-      githubUrl: "https://github.com/sara0411/Portfolio",
     },
     {
       id: "sam-itam-elearning",
       title: "SAM & ITAM E-Learning Platform",
-      tagline: "Internal learning platform covering software asset management fundamentals.",
+      tagline: "Internal learning and automation platform for Software Asset Management consultants.",
       category: "Enterprise",
-      problem: "The internal project organized training on ITAM fundamentals, IBM licensing and contracts, and CVA and SLR processes.",
-      contribution: "Designed and built the internal learning platform, including authentication, course progression, assessment, validation, reporting, and administration flows.",
-      solution: "Built the platform with Spring Boot, Thymeleaf, Spring Security, JPA, Hibernate, and H2. It includes role-based access, learning modules, quizzes, manager validation, progress tracking, resources, analytics, and email notifications.",
-      evidence: "Role-based learning, assessment, validation, and analytics flows",
-      technologies: ["Java", "Spring Boot", "Thymeleaf", "Spring Security", "JPA", "H2"],
+      problem: "The internal project organized training and operational knowledge for more than 60 consultants working with ITAM, IBM licensing, contracts, CVA, and SLR processes.",
+      contribution: "Designed and built the platform, including authentication, learning progression, assessment, manager validation, analytics, local RAG, OCR-assisted document processing, and reporting workflows.",
+      solution: "Built the core platform with Java 21, Spring Boot, Thymeleaf, Spring Security, JPA, and H2. Integrated LangChain4j, Ollama, and ChromaDB for local retrieval, plus Python, FastAPI, Tesseract, and Apache POI for document and spreadsheet automation.",
+      evidence: "Designed for 60+ consultants with role-based learning, RAG, and document automation",
+      technologies: ["Java 21", "Spring Boot", "LangChain4j", "Ollama", "ChromaDB", "FastAPI", "Apache POI"],
       status: "Completed",
-      githubUrl: "https://github.com/sara0411/Portfolio",
     },
     {
       id: "recruitment-cv-platform",
@@ -171,6 +174,18 @@ export const PORTFOLIO_DATA = {
       status: "Completed",
       githubUrl: "https://github.com/sara0411/GestionCVForum",
     },
+    {
+      id: "pagemate",
+      title: "PageMate",
+      tagline: "A mobile reading product built around private libraries and shared reading.",
+      category: "Mobile & Full-Stack",
+      problem: "Readers need one place to manage private books, track progress, annotate pages, and share reading experiences with controlled visibility.",
+      contribution: "Designed the product, its mobile experience, data model, access rules, and the reading and social flows.",
+      solution: "Building the application in Flutter with Supabase authentication, PostgreSQL, private storage, signed document access, realtime features, notes, highlights, and reading progress.",
+      evidence: "Active Flutter and Supabase implementation with documented product and access architecture",
+      technologies: ["Flutter", "Dart", "Supabase", "PostgreSQL", "Realtime"],
+      status: "Active Development",
+    },
   ] as Project[],
 
   skills: [
@@ -180,7 +195,7 @@ export const PORTFOLIO_DATA = {
     },
     {
       title: "Backend & APIs",
-      skills: ["Spring Boot", "Node.js", "Express", "ASP.NET Core", "REST APIs", "Microservices", "JPA / Hibernate"],
+      skills: ["Spring Boot", "Node.js", "Express", "FastAPI", "ASP.NET Core", "REST APIs", "Microservices", "JPA / Hibernate"],
     },
     {
       title: "Frontend & Mobile",
@@ -188,11 +203,11 @@ export const PORTFOLIO_DATA = {
     },
     {
       title: "Data & AI",
-      skills: ["PostgreSQL", "Supabase", "SQL Server", "RAG", "NLP", "LSTM / BiLSTM", "Vector Search", "OCR"],
+      skills: ["PostgreSQL", "Supabase", "SQL Server", "RAG", "LangChain4j", "Ollama", "ChromaDB", "NLP", "Vector Search", "OCR"],
     },
     {
       title: "Enterprise, Cloud & Tools",
-      skills: ["ServiceNow", "BigFix", "IBM ILMT", "Active Directory", "Oracle Cloud Infrastructure", "Docker", "Power BI", "Git"],
+      skills: ["ServiceNow", "BigFix", "IBM ILMT", "Active Directory", "Oracle Cloud Infrastructure", "GCP", "Docker", "Power BI", "Git"],
     },
   ] as SkillCategory[],
 
@@ -208,9 +223,20 @@ export const PORTFOLIO_DATA = {
       description: "Foundation credential covering the BigFix platform.",
     },
     {
-      name: "Oracle Cloud Infrastructure DevOps",
+      name: "Oracle Cloud Infrastructure DevOps Professional",
       issuer: "Oracle",
       description: "Oracle Cloud Infrastructure DevOps certification.",
+    },
+    {
+      name: "IBM Licensing Expertise",
+      issuer: "IBM",
+      credentialId: "DL65030G",
+      description: "IBM software licensing expertise credential.",
+    },
+    {
+      name: "SAP Professional Fundamentals",
+      issuer: "SAP",
+      description: "SAP professional fundamentals credential.",
     },
   ] as Certification[],
 
@@ -219,19 +245,25 @@ export const PORTFOLIO_DATA = {
       degree: "State Engineering Degree in Computer Science, Information Systems & Networks",
       institution: "EMSI (École Marocaine des Sciences de l'Ingénieur), Casablanca",
       period: "2021 to 2026",
-      focus: "Computer science with an information systems and networks orientation.",
+      focus: "MIAGE-oriented software engineering, information systems, and networks curriculum.",
     },
   ] as EducationItem[],
 
   leadership: [
     {
       organization: "GDG on Campus EMSI Casablanca",
-      role: "Co-Lead (previously Lead / President)",
-      description: "A student developer community organizing technical workshops, events, and hackathons.",
+      role: "Former Lead and Co-Lead",
+      description: "Led and supported a student developer community organizing technical workshops, events, and hackathons.",
       highlights: [
         "Progressed from co-lead to Lead/President and currently serves as co-lead.",
         "Organized technical workshops, developer events, and career-oriented sessions.",
       ],
+    },
+    {
+      organization: "GDG Casablanca",
+      role: "Organizer",
+      description: "Supports the city developer community and its technical programming.",
+      highlights: [],
     },
     {
       organization: "OpportunAI Hackathon",

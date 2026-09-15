@@ -1,978 +1,123 @@
-\# Sara Ferraa — Profile Context
+# Sara Ferraa: verified public profile
 
+This file is the factual source for public portfolio and GitHub profile copy. Personal interests, private job-search activity, and unconfirmed claims are intentionally excluded.
 
+## Positioning
 
-This file contains factual information about Sara Ferraa for contextual reference when working with the portfolio.
+- Name: Sara Ferraa
+- Professional title: Software Engineer
+- Location: Casablanca, Morocco
+- Current stage: Recent software engineering graduate and current Software Engineering Intern at Automai
+- Target: Backend and enterprise software engineering roles in Morocco or internationally
+- Languages: Arabic (native), French (C2), English (C2)
+- Primary backend stack: Java and Spring Boot
+- Supporting areas: full-stack products, mobile development, applied AI, enterprise automation, cloud, and enterprise platforms
 
+## Education
 
+- State Engineering Degree in Computer Science, Information Systems and Networks
+- EMSI Casablanca
+- 2021 to 2026
+- MIAGE-oriented curriculum
 
-\## Identity
+## Experience
 
+### Automai
 
+- Role: Software Engineering Intern
+- Period: August 2026 to present
+- Location: Casablanca, Morocco
+- Responsible for a guided authoring feature in a C# and WinForms desktop application that compiles user-taught workflows into automation executed by a separate runtime.
+- Works across UI, persistence, code generation, and runtime integration.
+- Traced generated output through its consuming runtime, root-caused and fixed approximately 30 defects, and improved reliability ahead of release.
+- Shipped save-and-resume support to replace a flow that forced users to discard unfinished work.
+- Reconciled the feature with its documentation and runtime contract.
+- Helped unblock a release by root-causing a fresh-install build failure that left a core service non-functional.
 
-\* Name: Sara Ferraa
+### Deloitte Extended Services Morocco
 
-\* Professional title: Software Engineer
+- Role: Software Asset Management Intern
+- Period: 2 February 2026 to 29 July 2026
+- Worked with IBM licensing environments, ILMT, BigFix, Passport Advantage concepts, ServiceNow SAM Pro, Flexera, USU, Active Directory, Power BI, Excel, VBA, and FinOps concepts.
+- Designed and built an internal SAM and ITAM learning and automation platform for more than 60 consultants.
+- Platform capabilities included authentication, role-based learning, quizzes, manager validation, progress tracking, analytics, local RAG, OCR-assisted document processing, reporting, and email notifications.
+- Main implementation included Java 21, Spring Boot, Thymeleaf, Spring Security, JPA, H2, LangChain4j, Ollama, ChromaDB, Python, FastAPI, Tesseract, and Apache POI.
 
-\* Location: Morocco
+### SLTVerse
 
-\* Education: Engineering student / graduate, EMSI Casablanca
+- Role: Software Engineering Intern
+- Contributed to PingPay mobile and web products using React Native, Expo, TypeScript, Node.js, Express, Supabase, and PostgreSQL.
+- Integrated payment, identity, blockchain, and realtime services including Stripe, Plaid, Ethers.js, WebSockets, and ShuftiPro.
+- Contributed to a Next.js dashboard with role-based areas and more than 40 backend API endpoints.
 
-\* Academic background: Computer Science, Information Systems and Networks / MIAGE-oriented coursework
+### Attijariwafa Bank
 
-\* Languages:
+- Role: Software Developer Intern
+- Developed a recruitment CV management application with ASP.NET Core MVC, C#, SQL Server, and role-based workflows.
 
+## Selected projects
 
+### AI Log Analyzer
 
-&#x20; \* Arabic: Native
+- Academic two-person project using approximately 1 GB of logs.
+- Used Syslog processing, NLP, LSTM, and BiLSTM models for classification.
+- Reported evaluation accuracy: approximately 91.3%.
+- Precision, recall, and F1 are not available and must not be invented.
+- Public source: https://github.com/sara0411/cybersec-log-analyzer
 
-&#x20; \* French: C2
+### SAM and ITAM Learning Platform
 
-&#x20; \* English: C2
+- Private Deloitte graduation project designed for more than 60 consultants.
+- Combined enterprise learning, local RAG, OCR-assisted processing, and document and spreadsheet automation.
+- Private work. Do not publish a repository link.
 
+### PingPay Dashboard
 
+- Next.js, React, TypeScript, Supabase, and Recharts dashboard.
+- Included user, business, and administrator areas.
+- Supporting backend contained more than 40 API endpoints.
+- Private work. Do not publish a repository link.
 
-\## Professional Profile
+### PageMate
 
+- Active personal mobile product for private libraries and shared reading.
+- Built with Flutter and Supabase.
+- Includes authentication, PostgreSQL, private storage, signed document access, realtime features, notes, highlights, reading progress, and social reading flows.
+- Private work until Sara provides a public repository or product URL.
 
+### Recruitment CV Management Platform
 
-Sara Ferraa is a software engineer with experience across:
+- ASP.NET Core MVC, C#, and SQL Server application for recruitment forums.
+- Public source: https://github.com/sara0411/GestionCVForum
 
+## Certifications
 
+- ServiceNow Certified System Administrator
+- HCL BigFix Foundation
+- Oracle Cloud Infrastructure DevOps Professional
+- IBM Licensing Expertise badge, code DL65030G
+- SAP Professional Fundamentals
 
-\* Backend development
-
-\* Full-stack web development
-
-\* Applied AI
-
-\* Enterprise automation
-
-\* Mobile development
-
-\* Enterprise platforms
-
-\* Software Asset Management (SAM)
-
-\* IT Asset Management (ITAM)
-
-\* ServiceNow
-
-\* IBM software licensing
-
-\* Cloud and DevOps
-
-\* Data and reporting
-
-\* Security and identity-related systems
-
-
-
-Her experience combines software engineering with enterprise technology and automation.
-
-
-
-\## Current and Recent Professional Experience
-
-
-
-\### Automai
-
-
-
-Role: Software Engineering Intern
-
-
-
-Status: Current
-
-
-
-\### Deloitte Extended Services Morocco
-
-
-
-Role: SAM Intern / Software Asset Management
-
-
-
-Status: Ended at the end of July 2026
-
-
-
-Experience includes work related to enterprise software asset management and IBM environments.
-
-
-
-Technologies, platforms and concepts encountered include:
-
-
-
-\* IBM software licensing
-
-\* IBM License Metric Tool (ILMT)
-
-\* BigFix
-
-\* ServiceNow SAM Pro
-
-\* Flexera
-
-\* USU
-
-\* Active Directory
-
-\* Power BI
-
-\* Excel
-
-\* VBA
-
-\* FinOps concepts
-
-\* Software Asset Management processes
-
-\* IT Asset Management
-
-\* Contract and licensing analysis
-
-\* CVA
-
-\* SLR
-
-\* IBM Passport Advantage concepts
-
-\* PVU
-
-\* VPC
-
-\* RVU
-
-\* IBM Cloud Paks
-
-
-
-\### Deloitte PFE / Internal Project
-
-
-
-Sara worked on a custom SAM e-learning platform.
-
-
-
-Technology stack:
-
-
-
-\* Java
-
-\* Spring Boot 3.5.x
-
-\* Thymeleaf
-
-\* Spring Security
-
-\* JPA / Hibernate
-
-\* H2
-
-\* JSON
-
-\* HTML / CSS / JavaScript
-
-
-
-The platform includes concepts such as:
-
-
-
-\* Authentication
-
-\* Role-based access control
-
-\* Learning modules
-
-\* Quizzes
-
-\* Module locking
-
-\* Quiz cooldowns
-
-\* Manager validation
-
-\* Progress tracking
-
-\* Time tracking
-
-\* Analytics
-
-\* Learning resources
-
-\* PDF and URL resources
-
-\* Email notifications
-
-\* Administrative roles
-
-
-
-The project covers ITAM fundamentals, IBM licensing and contracts, and CVA / SLR processes.
-
-
-
-\## Previous Professional Experience
-
-
-
-\### SLTVerse
-
-
-
-Worked on software and fintech-related applications.
-
-
-
-\#### PingPay / SLTPay
-
-
-
-Technologies:
-
-
-
-\* React Native
-
-\* Expo
-
-\* TypeScript
-
-\* Node.js
-
-\* Express
-
-\* Supabase
-
-\* PostgreSQL
-
-\* Stripe
-
-\* Plaid
-
-\* Ethers.js
-
-\* WebSockets
-
-\* ShuftiPro
-
-\* KYC systems
-
-
-
-The application involved fiat and cryptocurrency payment functionality.
-
-
-
-\#### PingPay Dashboard
-
-
-
-Full-stack contribution using:
-
-
-
-\* Next.js 14
-
-\* React
-
-\* TypeScript
-
-\* Tailwind CSS
-
-\* Recharts
-
-\* Framer Motion
-
-\* Supabase
-
-
-
-The dashboard included role-based access for:
-
-
-
-\* Users
-
-\* Businesses
-
-\* Administrators
-
-
-
-The backend included more than 40 API endpoints.
-
-
-
-\#### Zero-Knowledge / Blockchain Work
-
-
-
-Experience with zero-knowledge proof concepts and technologies including:
-
-
-
-\* zkPass
-
-\* Semaphore
-
-\* Hudata
-
-
-
-\### Attijariwafa Bank
-
-
-
-Developed a web application for CV management during recruitment forums.
-
-
-
-Technologies:
-
-
-
-\* ASP.NET Core MVC
-
-\* C#
-
-\* SQL Server
-
-
-
-The application included role-based functionality for recruitment-related workflows.
-
-
-
-\## Academic Projects
-
-
-
-\### AI Log Analyzer
-
-
-
-Security-focused log analysis project.
-
-
-
-Technologies and concepts:
-
-
-
-\* Syslog
-
-\* NLP
-
-\* LSTM
-
-\* BiLSTM
-
-\* Machine learning
-
-\* Dataset preprocessing
-
-\* Log classification
-
-
-
-The project involved improving dataset quality and achieved approximately 91.3% accuracy in the reported evaluation.
-
-
-
-\### RAG PDF Chatbot
-
-
-
-Developed a retrieval-augmented generation application for querying PDF documents.
-
-
-
-Technologies included:
-
-
-
-\* RAG
-
-\* PDF processing
-
-\* Vector search
-
-\* pgvector
-
-\* Large language models
-
-
-
-\### Spring Boot Microservices Telegram Chatbot
-
-
-
-Technologies and concepts:
-
-
-
-\* Java
-
-\* Spring Boot
-
-\* Microservices
-
-\* Telegram Bot API
-
-
-
-\### TrustExpense
-
-
-
-Mobile application involving expense management and document processing.
-
-
-
-Technologies:
-
-
-
-\* Flutter
-
-\* Firebase
-
-\* OCR
-
-\* TensorFlow Lite
-
-\* Polygon
-
-
-
-\## Personal Projects
-
-
-
-\### PageMate
-
-
-
-A social PDF reading application.
-
-
-
-Technology stack:
-
-
-
-\* Flutter
-
-\* Supabase
-
-
-
-Concepts include:
-
-
-
-\* PDF reading
-
-\* Notes
-
-\* Highlights
-
-\* Reading progress
-
-\* Social reading
-
-
-
-\## Enterprise / Automation Experience
-
-
-
-Experience with enterprise automation and software management environments, including:
-
-
-
-\* ServiceNow
-
-\* BigFix
-
-\* IBM licensing
-
-\* SAM
-
-\* ITAM
-
-\* Active Directory
-
-\* Power BI
-
-\* Excel
-
-\* VBA
-
-\* FinOps
-
-\* Enterprise reporting
-
-
-
-\## Certifications
-
-
-
-Reported certifications and credentials include:
-
-
-
-\* ServiceNow Certified System Administrator (CSA)
-
-\* HCL BigFix Foundation certification
-
-\* Oracle Cloud Infrastructure DevOps certification
-
-\* Salesforce Trailhead experience
-
-\* Salesforce Trailhead Adventurer rank
-
-\* IBM licensing / SAM-related training and experience
-
-
-
-\## Salesforce Experience
-
-
-
-Experience and learning around the Salesforce ecosystem, including:
-
-
-
-\* Salesforce Trailhead
-
-\* Agentforce
-
-\* Apex
-
-\* Lightning Web Components (LWC)
-
-
-
-Reported Trailhead profile information:
-
-
-
-\* Rank: Adventurer
-
-\* Badges: 12
-
-\* Points: 10,725
-
-\* Trails: 3
-
-
-
-\## Developer Skills
-
-
-
-\### Programming Languages
-
-
-
-\* Java
-
-\* JavaScript
-
-\* TypeScript
-
-\* Python
-
-\* C#
-
-\* Dart
-
-\* SQL
-
-\* HTML
-
-\* CSS
-
-\* Bash
-
-
-
-\### Backend
-
-
-
-\* Spring Boot
-
-\* Node.js
-
-\* Express
-
-\* ASP.NET Core
-
-\* REST APIs
-
-\* Microservices
-
-\* JPA
-
-\* Hibernate
-
-
-
-\### Frontend
-
-
-
-\* React
-
-\* Next.js
-
-\* Thymeleaf
-
-\* Tailwind CSS
-
-
-
-\### Mobile
-
-
-
-\* Flutter
-
-\* React Native
-
-\* Expo
-
-
-
-\### Databases
-
-
-
-\* PostgreSQL
-
-\* Supabase
-
-\* SQL Server
-
-\* H2
-
-\* Firebase
-
-\* pgvector
-
-
-
-\### AI / Machine Learning
-
-
-
-\* Retrieval-Augmented Generation (RAG)
-
-\* NLP
-
-\* LSTM
-
-\* BiLSTM
-
-\* OCR
-
-\* TensorFlow Lite
-
-\* Large Language Models
-
-\* Local LLMs
-
-\* Document processing
-
-\* Vector search
-
-
-
-\### Cloud / DevOps
-
-
-
-\* Oracle Cloud Infrastructure
-
-\* DevOps
-
-\* Git
-
-\* GitHub
-
-\* Docker
-
-\* CI/CD concepts
-
-
-
-\### Enterprise Technologies
-
-
-
-\* ServiceNow
-
-\* BigFix
-
-\* Flexera
-
-\* USU
-
-\* Active Directory
-
-\* IBM ILMT
-
-\* IBM software licensing
-
-\* Power BI
-
-\* Excel
-
-\* VBA
-
-\* FinOps
-
-
-
-\## Software Engineering Areas
-
-
-
-Areas represented across Sara's projects and experience:
-
-
-
-\* Full-stack software engineering
-
-\* Backend engineering
-
-\* API development
-
-\* Mobile application development
-
-\* Applied AI
-
-\* Enterprise software
-
-\* Automation
-
-\* Data processing
-
-\* Authentication and authorization
-
-\* Role-based access control
-
-\* Cloud and DevOps
-
-\* Security-related applications
-
-\* Financial technology
-
-\* Software Asset Management
-
-\* IT Asset Management
-
-
-
-\## Community Leadership
-
-
-
-\### GDG on Campus EMSI Casablanca
-
-
-
-Experience with Google Developer Groups on Campus at EMSI Casablanca.
-
-
-
-Leadership history includes:
-
-
-
-\* Co-lead
-
-\* Lead / President
-
-\* Current co-lead
-
-
-
-The community works with Google and EMSI LPRI.
-
-
-
-Activities have included:
-
-
-
-\* Technical workshops
-
-\* Developer events
-
-\* Community organization
-
-\* Hackathons
-
-\* Career-oriented events
-
-\* Technology talks
-
-
-
-Cells included areas such as:
-
-
-
-\* Web Development
-
-\* Media
-
-\* Design
-
-\* Cloud
-
-\* Game Development
-
-\* Marketing
-
-
-
-\### OpportunAI Hackathon
-
-
-
-Organized the OpportunAI hackathon while serving in a leadership role.
-
-
-
-Responsibilities included:
-
-
-
-\* Event organization
-
-\* Sponsor coordination
-
-\* Community coordination
-
-\* Operational problem solving
-
-
-
-The event continued after an initial sponsor cancellation through support from a laboratory sponsor.
-
-
-
-\### Career Center
-
-
-
-Experience as a Career Center ambassador.
-
-
-
-\## Technical Interests
-
-
-
-Current areas of professional and technical interest include:
-
-
-
-\* Software engineering
-
-\* AI engineering
-
-\* Applied AI
-
-\* Enterprise automation
-
-\* Cloud technologies
-
-\* DevOps
-
-\* Enterprise platforms
-
-\* ServiceNow
-
-\* Software Asset Management
-
-\* IT Asset Management
-
-\* FinOps
-
-\* Salesforce
-
-\* Backend engineering
-
-\* Full-stack development
-
-
-
-\## Career Direction
-
-
-
-Sara's professional positioning is centered on \*\*Software Engineering\*\*.
-
-
-
-Her background also includes enterprise technology, applied AI, automation, cloud, DevOps, SAM/ITAM and business-oriented technology work.
-
-
-
-The combination of software engineering and enterprise technology represents the broader context of her experience.
-
-
-
-\## Portfolio Context
-
-
-
-The portfolio represents Sara as a software engineer.
-
-
-
-Relevant areas represented by her background include:
-
-
-
-\* Software Engineering
-
-\* Backend
-
-\* Full Stack
-
-\* AI
-
-\* Enterprise Automation
-
-\* Cloud / DevOps
-
-\* Mobile
-
-\* Enterprise Platforms
-
-\* ServiceNow
-
-\* SAM / ITAM
-
-
-
-These areas reflect actual experience, projects, education, or technical learning described above.
-
-
-
+## Community
+
+- Organizer, GDG Casablanca
+- Former Lead and Co-Lead, GDG on Campus EMSI Casablanca
+- Organized technical workshops, developer events, and the OpportunAI hackathon
+- EMSI Career Center Ambassador
+
+## Public links
+
+- Portfolio: https://ferraasara.vercel.app
+- GitHub: https://github.com/sara0411
+- LinkedIn: https://www.linkedin.com/in/sara-ferraa-0aa73623a/
+- Email: ferraasara1@gmail.com
+
+## Writing rules
+
+- Position Sara first as a Software Engineer.
+- Present breadth as supporting evidence, not as competing identities.
+- Describe Deloitte and Automai accurately as internships.
+- Keep public positioning focused on software engineering for backend, desktop, and enterprise applications. Use private recruiter settings to signal active job searching.
+- Use only the metrics recorded above.
+- Do not describe Sara as an AI researcher.
+- Do not publish private project links or employer-confidential implementation details.

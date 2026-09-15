@@ -8,8 +8,8 @@ export default function ContactSection() {
       <p className="section-label">Contact</p>
       <h2>Get in touch.</h2>
       <p>
-        For software engineering opportunities, project conversations, or
-        collaboration, email me directly.
+        For backend and enterprise software engineering opportunities in
+        Morocco or internationally, email me directly.
       </p>
       <a
         className="contact-email"
@@ -28,13 +28,6 @@ export default function ContactSection() {
         </a>
         <a href={personal.github} target="_blank" rel="noopener noreferrer">
           GitHub
-        </a>
-        <a
-          href={personal.resumeUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Resume
         </a>
       </nav>
     </section>

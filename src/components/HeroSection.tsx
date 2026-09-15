@@ -7,7 +7,7 @@ export default function HeroSection() {
   return (
     <section id="hero" className="hero page-width" aria-labelledby="hero-title">
       <div className="hero-copy">
-        <p className="current-role">Software Engineer · Currently at Automai</p>
+        <p className="current-role">Recent graduate · Currently at Automai</p>
         <p className="hero-name">{personal.name}</p>
         <h1 id="hero-title">
           I build dependable backend systems, mobile products, and applied AI
@@ -20,11 +20,9 @@ export default function HeroSection() {
           </a>
           <a
             className="secondary-action"
-            href={personal.resumeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={`mailto:${personal.email}`}
           >
-            Read my resume
+            Email me
           </a>
         </div>
         <p className="hero-location">Based in {personal.location}</p>

@@ -12,20 +12,17 @@ for (const section of ['hero', 'projects', 'about', 'skills', 'experience', 'con
   assert.ok(html.includes('id="' + section + '"'), 'Section exists: ' + section);
   assert.ok(html.includes('href="#' + section + '"'), 'Native anchor exists: ' + section);
 }
-assert.equal((html.match(/class="project-row"/g) || []).length, 4, 'Four project entries');
+assert.equal((html.match(/class="project-row"/g) || []).length, 5, 'Five project entries');
 assert.ok(!html.includes('<details class="project-details"'), 'Project content is visible without disclosure widgets');
 assert.ok(html.includes('portfolio-theme'), 'System-aware theme initialization is present');
 assert.ok(html.includes('/sara-ferraa.jpg'), 'Real portrait is present');
 assert.ok(!html.toLowerCase().includes('whoami'), 'No terminal command flourish');
 assert.ok(html.includes('href="mailto:ferraasara1@gmail.com"'), 'Direct email contact');
+assert.ok(html.includes('backend and enterprise software engineering opportunities'), 'Target engineering route is explicit');
 assert.ok(html.includes('https://ferraasara.vercel.app'), 'Correct canonical domain');
 assert.ok(!html.includes('href="https://github.com/sara0411/Portfolio"'), 'No misleading project source links');
 assert.ok(!html.includes('<form'), 'Contact does not pretend to submit messages');
-const resume = await fetch(base + '/resume.pdf');
-assert.equal(resume.status, 200, 'CV is served');
-assert.match(resume.headers.get('content-type') || '', /application\/pdf/, 'CV has PDF content type');
-const pdf = new Uint8Array(await resume.arrayBuffer());
-assert.equal(new TextDecoder().decode(pdf.slice(0, 5)), '%PDF-', 'CV contains a PDF');
+assert.ok(!html.includes('/resume.pdf'), 'Placeholder CV is not linked');
 const icon = await fetch(base + '/icon.svg');
 assert.equal(icon.status, 200, 'Custom site icon is served');
-console.log('PASS: server-rendered content, section anchors, editorial projects, theme setup, portrait, contact, metadata, CV, and icon.');
+console.log('PASS: server-rendered content, section anchors, editorial projects, theme setup, portrait, job-search positioning, contact, metadata, and icon.');

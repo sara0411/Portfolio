@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { PORTFOLIO_DATA } from "@/data/portfolioData";
 import ThemeControl from "./ThemeControl";
 
 const navigationItems = [
@@ -52,11 +51,9 @@ export default function Navigation() {
           <ThemeControl />
           <a
             className="resume-link"
-            href={PORTFOLIO_DATA.personal.resumeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#contact"
           >
-            Resume
+            Available
           </a>
           <details className="mobile-menu" ref={mobileMenu}>
             <summary>Menu</summary>

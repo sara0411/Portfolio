@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://ferraasara.vercel.app"),
   title: "Sara Ferraa | Software Engineer",
   description:
-    "Software engineer working across backend development, full-stack products, mobile applications, applied AI, and enterprise automation.",
+    "Software engineer focused on backend systems and enterprise applications, with experience across Java, Spring Boot, C#, .NET, and applied AI.",
   alternates: { canonical: "/" },
   authors: [{ name: "Sara Ferraa" }],
   openGraph: {
     title: "Sara Ferraa | Software Engineer",
     description:
-      "Backend systems, product interfaces, mobile applications, and applied AI.",
+      "Recent graduate building backend systems, product interfaces, mobile applications, and applied AI tools.",
     url: "/",
     siteName: "Sara Ferraa Portfolio",
     type: "website",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: "Sara Ferraa | Software Engineer",
     description:
-      "Backend systems, product interfaces, mobile applications, and applied AI.",
+      "Recent graduate building backend systems, product interfaces, mobile applications, and applied AI tools.",
   },
 };
 

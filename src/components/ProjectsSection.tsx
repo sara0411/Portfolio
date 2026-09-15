@@ -1,8 +1,6 @@
 import { PORTFOLIO_DATA } from "@/data/portfolioData";
 import SectionHeading from "./SectionHeading";
 
-const portfolioRepository = "https://github.com/sara0411/portfolio";
-
 export default function ProjectsSection() {
   return (
     <section id="projects" tabIndex={-1} className="portfolio-section page-width">
@@ -14,10 +12,6 @@ export default function ProjectsSection() {
 
       <div className="project-list">
         {PORTFOLIO_DATA.projects.map((project, index) => {
-          const hasPublicSource =
-            project.githubUrl.replace(/\/$/, "").toLowerCase() !==
-            portfolioRepository;
-
           return (
             <article
               className="project-row"
@@ -60,7 +54,7 @@ export default function ProjectsSection() {
                       <li key={technology}>{technology}</li>
                     ))}
                   </ul>
-                  {hasPublicSource ? (
+                  {project.githubUrl ? (
                     <a
                       className="text-link"
                       href={project.githubUrl}
