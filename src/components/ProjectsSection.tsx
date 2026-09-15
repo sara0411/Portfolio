@@ -8,8 +8,8 @@ export default function ProjectsSection() {
     <section id="projects" tabIndex={-1} className="portfolio-section page-width">
       <SectionHeading
         label="Selected work"
-        title="Selected projects and the work behind them."
-        intro="Applied AI, fintech, enterprise learning, and recruitment systems."
+        title="Selected systems, with the work made visible."
+        intro="A closer look at the problem, my contribution, and the evidence available for each project."
       />
 
       <div className="project-list">
@@ -36,15 +36,23 @@ export default function ProjectsSection() {
                   <p className="project-status">{project.status}</p>
                 </div>
                 <p className="project-tagline">{project.tagline}</p>
+                <div className="project-evidence" aria-label="Project evidence">
+                  <span>Evidence</span>
+                  <strong>{project.evidence}</strong>
+                </div>
                 <div className="project-notes">
                   <div>
                     <h4>Context</h4>
                     <p>{project.problem}</p>
                   </div>
                   <div>
-                    <h4>Work</h4>
-                    <p>{project.solution}</p>
+                    <h4>My contribution</h4>
+                    <p>{project.contribution}</p>
                   </div>
+                </div>
+                <div className="project-implementation">
+                  <h4>Implementation</h4>
+                  <p>{project.solution}</p>
                 </div>
                 <div className="project-footer">
                   <ul className="technology-list" aria-label="Technologies">
@@ -61,7 +69,9 @@ export default function ProjectsSection() {
                     >
                       View source
                     </a>
-                  ) : null}
+                  ) : (
+                    <span className="project-visibility">Private work</span>
+                  )}
                 </div>
               </div>
             </article>

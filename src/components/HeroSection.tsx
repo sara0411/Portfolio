@@ -7,11 +7,12 @@ export default function HeroSection() {
   return (
     <section id="hero" className="hero page-width" aria-labelledby="hero-title">
       <div className="hero-copy">
-        <p className="current-role">Currently at Automai</p>
-        <h1 id="hero-title">{personal.name}</h1>
-        <p className="hero-statement">
-          Backend systems, product interfaces, mobile software, and applied AI.
-        </p>
+        <p className="current-role">Software Engineer · Currently at Automai</p>
+        <p className="hero-name">{personal.name}</p>
+        <h1 id="hero-title">
+          I build dependable backend systems, mobile products, and applied AI
+          tools.
+        </h1>
         <p className="hero-description">{personal.bioShort}</p>
         <div className="hero-actions">
           <a className="primary-action" href="#projects">

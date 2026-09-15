@@ -251,18 +251,17 @@ section:focus {
 }
 
 .hero h1 {
-  margin-top: 19px;
-  font-size: clamp(64px, 8vw, 108px);
-  line-height: 0.92;
+  max-width: 790px;
+  margin-top: 18px;
+  font-size: clamp(48px, 6.1vw, 82px);
+  line-height: 0.98;
 }
 
-.hero-statement {
-  max-width: 650px;
-  margin-top: 31px;
+.hero-name {
+  margin-top: 22px;
   font-family: Georgia, Cambria, "Times New Roman", serif;
-  font-size: clamp(25px, 3vw, 40px);
-  line-height: 1.18;
-  letter-spacing: -0.025em;
+  font-size: clamp(21px, 2.2vw, 30px);
+  letter-spacing: -0.02em;
 }
 
 .hero-description {
@@ -520,6 +519,33 @@ section:focus {
   font-size: 17px;
 }
 
+.project-evidence {
+  display: grid;
+  grid-template-columns: minmax(110px, 0.22fr) minmax(0, 0.78fr);
+  gap: 28px;
+  align-items: baseline;
+  margin-top: 29px;
+  padding-block: 16px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.project-evidence span {
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.project-evidence strong {
+  font-family: Georgia, Cambria, "Times New Roman", serif;
+  font-size: clamp(19px, 2vw, 27px);
+  font-weight: 500;
+  line-height: 1.28;
+  letter-spacing: -0.018em;
+}
+
 .project-notes {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -534,6 +560,24 @@ section:focus {
 }
 
 .project-notes p {
+  margin-top: 9px;
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.78;
+}
+
+.project-implementation {
+  max-width: 860px;
+  margin-top: 25px;
+}
+
+.project-implementation h4 {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.project-implementation p {
   margin-top: 9px;
   color: var(--text-muted);
   font-size: 14px;
@@ -569,6 +613,12 @@ section:focus {
   font-size: 13px;
   text-decoration: underline;
   text-underline-offset: 4px;
+}
+
+.project-visibility {
+  flex-shrink: 0;
+  color: var(--text-muted);
+  font-size: 12px;
 }
 
 .more-work {
@@ -869,11 +919,11 @@ section:focus {
   }
 
   .hero h1 {
-    animation: title-typeset 820ms 90ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation: title-typeset 820ms 170ms cubic-bezier(0.22, 1, 0.36, 1) both;
   }
 
-  .hero-statement {
-    animation: title-typeset 780ms 210ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  .hero-name {
+    animation: title-typeset 640ms 80ms cubic-bezier(0.22, 1, 0.36, 1) both;
   }
 
   .portrait-frame {
@@ -942,7 +992,7 @@ section:focus {
 @media (prefers-reduced-motion: reduce) {
   .current-role,
   .hero h1,
-  .hero-statement,
+  .hero-name,
   .portrait-frame,
   .portrait-frame img,
   .section-heading h2,
@@ -1002,7 +1052,7 @@ section:focus {
   }
 
   .hero h1 {
-    font-size: clamp(58px, 8vw, 82px);
+    font-size: clamp(50px, 7vw, 72px);
   }
 
   .section-heading,
@@ -1141,11 +1191,12 @@ section:focus {
 
   .hero h1 {
     margin-top: 15px;
-    font-size: clamp(54px, 17vw, 76px);
+    font-size: clamp(43px, 12vw, 58px);
+    line-height: 1.02;
   }
 
-  .hero-statement {
-    font-size: 28px;
+  .hero-name {
+    font-size: 22px;
   }
 
   .hero-description {
@@ -1195,6 +1246,11 @@ section:focus {
   .project-notes {
     grid-template-columns: 1fr;
     gap: 22px;
+  }
+
+  .project-evidence {
+    grid-template-columns: 1fr;
+    gap: 7px;
   }
 
   .project-footer {

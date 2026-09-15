@@ -4,7 +4,9 @@ export interface Project {
   tagline: string;
   category: "Machine Learning" | "Backend Systems" | "Mobile & Full-Stack" | "Enterprise";
   problem: string;
+  contribution: string;
   solution: string;
+  evidence: string;
   technologies: string[];
   status: "Completed" | "Active Development" | "Deployed";
   githubUrl: string;
@@ -53,7 +55,7 @@ export const PORTFOLIO_DATA = {
     portrait: "/sara-ferraa.jpg",
     title: "Software Engineer",
     secondaryTitle: "Backend · Full Stack · Mobile · Applied AI · Enterprise Automation",
-    bioShort: "I work across Java and Spring Boot backends, React and Next.js interfaces, and Flutter and React Native apps. I am currently a Software Engineering Intern at Automai.",
+    bioShort: "My work includes Java and Spring Boot backends, React and Next.js interfaces, and mobile applications built with Flutter and React Native. I am currently a Software Engineering Intern at Automai.",
     email: "ferraasara1@gmail.com",
     github: "https://github.com/sara0411",
     linkedin: "https://linkedin.com/in/saraferraa",
@@ -123,7 +125,9 @@ export const PORTFOLIO_DATA = {
       tagline: "Sequence model for classifying anomalous system log behavior.",
       category: "Machine Learning",
       problem: "The project explored how to classify security-focused system log data while improving the quality of the source dataset used for evaluation.",
+      contribution: "Prepared and improved the source dataset, then developed and evaluated the sequence-model pipeline for log classification.",
       solution: "Processed Syslog data and applied NLP with LSTM and BiLSTM sequence models. The reported evaluation reached approximately 91.3% accuracy.",
+      evidence: "Approximately 91.3% reported evaluation accuracy",
       technologies: ["Python", "LSTM", "BiLSTM", "NLP", "Machine Learning"],
       status: "Completed",
       githubUrl: "https://github.com/sara0411/cybersec-log-analyzer",
@@ -134,7 +138,9 @@ export const PORTFOLIO_DATA = {
       tagline: "Full-stack administration and analytics dashboard for a fintech product.",
       category: "Backend Systems",
       problem: "PingPay required distinct application experiences and permissions for users, businesses, and administrators.",
+      contribution: "Contributed across the Next.js dashboard, its role-based product flows, and the supporting backend APIs.",
       solution: "Contributed to a Next.js, React, and TypeScript dashboard with Supabase, Recharts, role-based access, and a backend containing more than 40 API endpoints.",
+      evidence: "More than 40 backend API endpoints",
       technologies: ["Next.js", "React", "TypeScript", "Supabase", "Recharts"],
       status: "Completed",
       githubUrl: "https://github.com/sara0411/Portfolio",
@@ -145,7 +151,9 @@ export const PORTFOLIO_DATA = {
       tagline: "Internal learning platform covering software asset management fundamentals.",
       category: "Enterprise",
       problem: "The internal project organized training on ITAM fundamentals, IBM licensing and contracts, and CVA and SLR processes.",
+      contribution: "Designed and built the internal learning platform, including authentication, course progression, assessment, validation, reporting, and administration flows.",
       solution: "Built the platform with Spring Boot, Thymeleaf, Spring Security, JPA, Hibernate, and H2. It includes role-based access, learning modules, quizzes, manager validation, progress tracking, resources, analytics, and email notifications.",
+      evidence: "Role-based learning, assessment, validation, and analytics flows",
       technologies: ["Java", "Spring Boot", "Thymeleaf", "Spring Security", "JPA", "H2"],
       status: "Completed",
       githubUrl: "https://github.com/sara0411/Portfolio",
@@ -156,7 +164,9 @@ export const PORTFOLIO_DATA = {
       tagline: "Web application for managing candidate CVs during recruitment forums.",
       category: "Backend Systems",
       problem: "Recruitment forums needed an application to manage candidate CVs and the associated recruitment workflow.",
+      contribution: "Developed the application and implemented role-based access for its recruitment workflow.",
       solution: "Developed an ASP.NET Core MVC application in C# with SQL Server and role-based functionality for recruitment users.",
+      evidence: "Public source for the role-based recruitment application",
       technologies: ["C#", "ASP.NET Core MVC", "SQL Server"],
       status: "Completed",
       githubUrl: "https://github.com/sara0411/GestionCVForum",

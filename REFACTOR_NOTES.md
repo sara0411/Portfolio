@@ -10,7 +10,7 @@ Clipping reveals finish within the first 14 percent of viewport entry. This keep
 
 There are no gradients, shadows, icon libraries, terminal elements, card grids, glass effects, or decorative background patterns.
 
-Projects read as full-width case notes with context, implementation, technology, and public source links. Sections are separated with rules instead of floating containers. Most of the page remains server rendered. Client-side code is limited to theme preference and Escape handling for the mobile menu.
+Projects read as full-width case notes with context, Sara's contribution, implementation details, factual evidence, technology, and public source links. Private work is labeled directly rather than showing a misleading repository link. Sections are separated with rules instead of floating containers. Most of the page remains server rendered. Client-side code is limited to theme preference and Escape handling for the mobile menu.
 
 ## Content status
 
@@ -53,6 +53,7 @@ Browser checks cover desktop and mobile layouts, horizontal overflow, portrait l
 - Contact reveal timing was shortened so the email and profile links always reach their final unclipped state before they become readable. Desktop and mobile anchor checks confirmed a zero-percent clip for both elements.
 - All five section anchors were checked at desktop and mobile widths. Visible unfolding content completed cleanly, split columns reached their final aligned positions with further scrolling, and off-canvas transforms no longer create horizontal page overflow.
 - The reduced-motion media block removes animation, clipping, and transforms from every animated selector. A separate runtime with reduced motion emulation has not been run for this motion pass.
+- The positioning and project-evidence pass kept the editorial design while giving the hero a direct engineering statement. Desktop and mobile browser checks confirmed the longer heading and evidence rows fit without horizontal overflow.
 - A physical-phone check and a Lighthouse audit have not been run.
 
 ## Publishing
