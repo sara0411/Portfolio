@@ -6,11 +6,10 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint src next.config.ts",
+    "test:smoke": "node tests/smoke.mjs"
   },
   "dependencies": {
-    "framer-motion": "^12.23.12",
-    "lucide-react": "^0.539.0",
     "next": "^15.4.11",
     "react": "^19.1.2",
     "react-dom": "^19.1.2"

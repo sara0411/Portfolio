@@ -1,87 +1,67 @@
-import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import "./globals.css";
-import { ThemeProvider } from "@/contexts/ThemeContext";
-import NavigationWrapper from "@/components/NavigationWrapper";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-sans",
-  display: "swap",
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-  display: "swap",
-});
+import Navigation from "@/components/Navigation";
 
 export const metadata: Metadata = {
-  title: "Sara Ferraa — Software Engineer",
-  description: "Software Engineer working across backend development, enterprise platforms, automation, and applied AI.",
-  keywords: [
-    "Software Engineer",
-    "Backend Developer",
-    "ServiceNow Developer",
-    "Python",
-    "Java",
-    "C#",
-    "ASP.NET Core",
-    "Machine Learning",
-    "Sara Ferraa"
-  ],
+  metadataBase: new URL("https://ferraasara.vercel.app"),
+  title: "Sara Ferraa | Software Engineer",
+  description:
+    "Software engineer working across backend development, full-stack products, mobile applications, applied AI, and enterprise automation.",
+  alternates: { canonical: "/" },
   authors: [{ name: "Sara Ferraa" }],
   openGraph: {
-    title: "Sara Ferraa — Software Engineer",
-    description: "Software Engineer working across backend systems, enterprise platforms, automation, and applied AI.",
-    url: "https://saraferraa.vercel.app",
+    title: "Sara Ferraa | Software Engineer",
+    description:
+      "Backend systems, product interfaces, mobile applications, and applied AI.",
+    url: "/",
     siteName: "Sara Ferraa Portfolio",
     type: "website",
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Sara Ferraa — Software Engineer",
-    description: "Software Engineer working across backend systems, enterprise platforms, automation, and applied AI.",
+    card: "summary",
+    title: "Sara Ferraa | Software Engineer",
+    description:
+      "Backend systems, product interfaces, mobile applications, and applied AI.",
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export const viewport: Viewport = {
+  colorScheme: "light dark",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#eee9df" },
+    { media: "(prefers-color-scheme: dark)", color: "#171816" },
+  ],
+};
+
+const themeScript = `
+  (function () {
+    try {
+      var preference = localStorage.getItem('portfolio-theme') || 'system';
+      var dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var resolved = preference === 'system' ? (dark ? 'dark' : 'light') : preference;
+      document.documentElement.dataset.theme = resolved;
+      document.documentElement.dataset.themePreference = preference;
+    } catch (_) {}
+  })();
+`;
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                try {
-                  var theme = localStorage.getItem('theme') || 'dark';
-                  if (theme === 'dark') {
-                    document.documentElement.classList.add('dark');
-                    document.documentElement.setAttribute('data-theme', 'dark');
-                  } else {
-                    document.documentElement.classList.remove('dark');
-                    document.documentElement.setAttribute('data-theme', 'light');
-                  }
-                } catch (e) {
-                  document.documentElement.classList.add('dark');
-                  document.documentElement.setAttribute('data-theme', 'dark');
-                }
-              })();
-            `,
-          }}
+      <body>
+        <Script
+          id="theme-init"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: themeScript }}
         />
-      </head>
-      <body className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased selection:bg-accent/20`}>
-        <ThemeProvider>
-          <NavigationWrapper />
-          <main className="relative min-h-screen">
-            {children}
-          </main>
-        </ThemeProvider>
+        <a className="skip-link" href="#main-content">
+          Skip to content
+        </a>
+        <Navigation />
+        <main id="main-content" tabIndex={-1}>
+          {children}
+        </main>
       </body>
     </html>
   );

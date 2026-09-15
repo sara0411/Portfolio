@@ -1,24 +1,19 @@
-# Sara Ferraa — Portfolio
+# Sara Ferraa Portfolio
 
-![Next.js](https://img.shields.io/badge/Next.js-15-000000?logo=nextdotjs&logoColor=white)
-![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=111111)
-![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?logo=tailwindcss&logoColor=white)
-![Framer Motion](https://img.shields.io/badge/Framer_Motion-12-0055FF?logo=framer&logoColor=white)
+A responsive personal portfolio for Sara Ferraa, built with Next.js, React, and TypeScript.
 
-A responsive personal portfolio presenting my software-engineering, AI, and product work.
+**Production website:** [ferraasara.vercel.app](https://ferraasara.vercel.app). The current local refactor still requires review and a separate deployment.
 
-**Live website:** [saraferraa.vercel.app](https://saraferraa.vercel.app)
+## Design
 
-## Highlights
-
-- Responsive layout for desktop and mobile
-- Dark and light themes
-- Motion-based transitions and scroll reveals
-- Project and skills presentation
-- Accessible semantic structure
-- Metadata prepared for search and social sharing
-- Component-based Next.js architecture
+- Editorial layout built around Sara's real portrait and project writing
+- Warm light palette and quiet dark palette
+- System theme by default, with an explicit System, Light, or Dark control
+- System UI text with Georgia for display type
+- Text links, ruled sections, and long-form project entries
+- Scroll-linked chapter passages, assembling content columns, editorial unfolds, and reading progress with reduced-motion support
+- No bounce effects, gradients, shadows, icon library, or decorative backgrounds
+- Responsive desktop and mobile navigation
 
 ## Stack
 
@@ -26,47 +21,36 @@ A responsive personal portfolio presenting my software-engineering, AI, and prod
 - React 19
 - TypeScript
 - Tailwind CSS 4
-- Framer Motion
-- Lucide React
 - Vercel deployment
 
 ## Run locally
 
 ```bash
-git clone https://github.com/sara0411/Portfolio.git
-cd Portfolio
-npm install
+npm ci
 npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
 
-Create a production build with:
+Create and check a production build with:
 
 ```bash
+npm run lint
+npx tsc --noEmit
 npm run build
 npm start
 ```
+
+With the production server running, use `npm run test:smoke` to check the server-rendered content and key assets.
 
 ## Structure
 
 ```text
 src/
-├── app/              # Layout, metadata, and routes
-└── components/       # Portfolio sections and reusable UI
-public/               # Images and static assets
+├── app/              # Layout, metadata, route, and global styles
+├── components/       # Portfolio sections and theme control
+└── data/             # Verified portfolio content
+public/               # Portrait, resume, and static assets
 ```
 
-## Main components
-
-- Navigation
-- Hero and professional introduction
-- About
-- Project showcase
-- Skills
-- Contact
-- Footer
-
-## Quality
-
-Performance, accessibility, and SEO should be verified against the deployed build whenever the content or dependencies change. No numeric Lighthouse score is claimed without a published report.
+See [REFACTOR_NOTES.md](REFACTOR_NOTES.md) for the design decisions, content checklist, verification results, and release notes.

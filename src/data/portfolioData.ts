@@ -2,11 +2,11 @@ export interface Project {
   id: string;
   title: string;
   tagline: string;
-  category: 'Machine Learning' | 'Backend Systems' | 'Mobile & Full-Stack' | 'Enterprise';
+  category: "Machine Learning" | "Backend Systems" | "Mobile & Full-Stack" | "Enterprise";
   problem: string;
   solution: string;
   technologies: string[];
-  status: 'Completed' | 'Active Development' | 'Deployed';
+  status: "Completed" | "Active Development" | "Deployed";
   githubUrl: string;
   liveUrl?: string;
 }
@@ -15,7 +15,7 @@ export interface ExperienceItem {
   period: string;
   role: string;
   organization: string;
-  type: 'Enterprise Platform' | 'Software Engineering';
+  type: "Enterprise Platform" | "Software Engineering";
   highlights: string[];
   skills: string[];
 }
@@ -40,184 +40,200 @@ export interface EducationItem {
   focus: string;
 }
 
-export interface EngineeringPrinciple {
-  title: string;
+export interface LeadershipItem {
+  organization: string;
+  role: string;
   description: string;
+  highlights: string[];
 }
 
 export const PORTFOLIO_DATA = {
   personal: {
     name: "Sara Ferraa",
+    portrait: "/sara-ferraa.jpg",
     title: "Software Engineer",
-    secondaryTitle: "Backend Systems · Enterprise Platforms · Workflow Automation · Applied AI",
-    bioShort: "Software engineer working across backend development, enterprise platforms, automation, and applied AI. I focus on building reliable systems end-to-end, from APIs and databases to business-process automation and user-facing applications.",
+    secondaryTitle: "Backend · Full Stack · Mobile · Applied AI · Enterprise Automation",
+    bioShort: "I work across Java and Spring Boot backends, React and Next.js interfaces, and Flutter and React Native apps. I am currently a Software Engineering Intern at Automai.",
     email: "ferraasara1@gmail.com",
     github: "https://github.com/sara0411",
     linkedin: "https://linkedin.com/in/saraferraa",
     resumeUrl: "/resume.pdf",
-    location: "Remote / Hybrid",
-    availability: "Available for Software Engineering roles",
+    location: "Casablanca, Morocco",
+    availability: "Software Engineering Intern at Automai",
   },
 
   about: {
     paragraphs: [
-      "I am a software engineer with practical experience spanning backend development, enterprise platforms, automation, and applied machine learning. I enjoy understanding how systems work end-to-end—from database design and API contracts to automated business workflows and client applications.",
-      "My technical background includes engineering with Java, Python, C#, JavaScript, and SQL, alongside enterprise development on ServiceNow. Rather than treating technologies as isolated silos, I focus on system reliability, structured code architecture, and practical engineering solutions that solve real operational problems.",
+      "I am a software engineer with experience across backend and full-stack development, mobile applications, applied AI, and enterprise automation. My work includes Java and Spring Boot systems, Node.js and Express APIs, React and Next.js interfaces, and mobile products built with Flutter and React Native.",
+      "My previous IT and Software Asset Management work at Deloitte covered IBM licensing, ServiceNow SAM Pro, BigFix, enterprise reporting, and related governance processes. That experience complements my engineering work with an understanding of how software is operated, tracked, and governed in enterprise environments.",
     ],
-    highlights: [
-      {
-        label: "Systems & APIs",
-        description: "Designing RESTful services, database schemas, and robust backend logic with strong separation of concerns."
-      },
-      {
-        label: "Enterprise & Automation",
-        description: "Configuring enterprise workflows, ITSM lifecycles, and automated process pipelines using ServiceNow and Flow Designer."
-      },
-      {
-        label: "Applied Machine Learning",
-        description: "Developing practical data processing pipelines and neural network models for text classification and sequence anomaly detection."
-      }
-    ]
   },
 
   experience: [
     {
       period: "Present",
-      role: "Enterprise Platform & Workflow Engineering",
-      organization: "ServiceNow Ecosystem",
-      type: "Enterprise Platform",
-      highlights: [
-        "Configured and maintained core IT Service Management (ITSM) lifecycle modules including Incident, Problem, Change, Request, and Knowledge Management.",
-        "Built automated multi-step organizational workflows utilizing ServiceNow Flow Designer and platform Business Rules to reduce manual process overhead.",
-        "Engineered custom Service Catalog items, record producers, client scripts, and UI policies tailored to business user requirements.",
-        "Researched and implemented platform integrations connecting ServiceNow instances with external REST APIs and structured data repositories."
-      ],
-      skills: ["ServiceNow", "ITSM", "Flow Designer", "JavaScript", "REST APIs", "Service Catalog", "Workflow Automation"]
+      role: "Software Engineering Intern",
+      organization: "Automai",
+      type: "Software Engineering",
+      highlights: [],
+      skills: [],
     },
     {
-      period: "Engineering Projects & Development",
+      period: "Ended July 2026",
+      role: "IT & Software Asset Management Intern",
+      organization: "Deloitte Extended Services Morocco",
+      type: "Enterprise Platform",
+      highlights: [
+        "Worked with IBM software licensing environments, including ILMT, BigFix, and Passport Advantage concepts.",
+        "Used ServiceNow SAM Pro, Flexera, USU, and Active Directory for software and IT asset work.",
+        "Performed contract and licensing analysis and built reporting with Power BI, Excel, and VBA.",
+        "Designed and built a Spring Boot e-learning platform for internal SAM and ITAM training.",
+      ],
+      skills: ["IBM Licensing", "ILMT", "BigFix", "ServiceNow SAM Pro", "Power BI", "VBA", "FinOps"],
+    },
+    {
+      period: "Previous",
       role: "Software Engineer",
-      organization: "Independent & Collaborative Systems",
+      organization: "SLTVerse",
       type: "Software Engineering",
       highlights: [
-        "Architected multi-tier web applications leveraging ASP.NET Core MVC and relational databases (SQL Server, PostgreSQL), enforcing domain isolation and data validation.",
-        "Engineered deep learning anomaly detection pipelines using Python and TensorFlow to identify anomalous sequences in operational log files.",
-        "Developed cross-platform mobile utilities with React Native connected to Node.js backend endpoints and relational databases."
+        "Built mobile features for PingPay/SLTPay with React Native, Expo, and TypeScript against a Node.js and Express backend.",
+        "Integrated payment, identity, blockchain, and real-time services including Stripe, Plaid, Ethers.js, WebSockets, and ShuftiPro.",
+        "Contributed to a Next.js dashboard with role-based access and more than 40 API endpoints.",
       ],
-      skills: ["Python", "C#", "ASP.NET Core", "React Native", "PostgreSQL", "Docker", "Git"]
-    }
+      skills: ["React Native", "TypeScript", "Node.js", "Next.js", "Supabase", "PostgreSQL"],
+    },
+    {
+      period: "Previous",
+      role: "Software Developer",
+      organization: "Attijariwafa Bank",
+      type: "Software Engineering",
+      highlights: [
+        "Developed a CV management web application for recruitment forums using ASP.NET Core MVC, C#, and SQL Server.",
+        "Implemented role-based functionality for recruitment workflows.",
+      ],
+      skills: ["ASP.NET Core MVC", "C#", "SQL Server"],
+    },
   ] as ExperienceItem[],
 
   projects: [
     {
-      id: "lstm-anomaly-detector",
-      title: "Log Sequence Anomaly Detection System",
-      tagline: "Sequence modeling pipeline to detect anomalous operational behaviors in system logs.",
+      id: "ai-log-analyzer",
+      title: "AI Log Analyzer",
+      tagline: "Sequence model for classifying anomalous system log behavior.",
       category: "Machine Learning",
-      problem: "Large-scale systems generate thousands of log lines per minute, making manual inspection impossible and leaving security threats or infrastructure failures undetected until downtime occurs.",
-      solution: "Engineered an end-to-end NLP and LSTM recurrent neural network pipeline in Python and TensorFlow. The model parses unstructured log streams into sequential token vectors and identifies out-of-distribution sequence behaviors indicative of system failures.",
-      technologies: ["Python", "TensorFlow", "Keras", "NumPy", "Pandas", "NLP"],
+      problem: "The project explored how to classify security-focused system log data while improving the quality of the source dataset used for evaluation.",
+      solution: "Processed Syslog data and applied NLP with LSTM and BiLSTM sequence models. The reported evaluation reached approximately 91.3% accuracy.",
+      technologies: ["Python", "LSTM", "BiLSTM", "NLP", "Machine Learning"],
       status: "Completed",
-      githubUrl: "https://github.com/sara0411/Portfolio",
+      githubUrl: "https://github.com/sara0411/cybersec-log-analyzer",
     },
     {
-      id: "ai-resume-screener",
-      title: "Candidate Screening & Matching Engine",
-      tagline: "Text processing pipeline that systematically matches candidate profiles to technical requirements.",
-      category: "Machine Learning",
-      problem: "Recruitment processes frequently struggle with high volumes of unstructured candidate resumes that must be consistently evaluated against complex job requisitions.",
-      solution: "Developed a natural language processing service using scikit-learn and Python. The application extracts technical skill entities, tokenizes unstructured CV text, and computes similarity vectors against job descriptions to provide deterministic candidate matching.",
-      technologies: ["Python", "scikit-learn", "NLP", "Pandas", "Text Processing"],
-      status: "Completed",
-      githubUrl: "https://github.com/sara0411/Portfolio",
-    },
-    {
-      id: "paperless-recruitment",
-      title: "Enterprise Recruitment Management Platform",
-      tagline: "Centralized recruitment fair management system with digital data collection and workflow tracking.",
+      id: "pingpay-dashboard",
+      title: "PingPay Dashboard",
+      tagline: "Full-stack administration and analytics dashboard for a fintech product.",
       category: "Backend Systems",
-      problem: "Campus and career fairs traditionally rely on paper forms and disparate spreadsheets, creating data entry bottlenecks and delayed candidate follow-ups.",
-      solution: "Built a structured MVC web platform in C# and ASP.NET Core with a SQL Server relational backend. Implemented role-based access control, automated candidate profile ingestion, structured evaluation scorecards, and administrative reporting dashboards.",
-      technologies: ["C#", ".NET ASP Core MVC", "SQL Server", "Entity Framework", "REST APIs"],
+      problem: "PingPay required distinct application experiences and permissions for users, businesses, and administrators.",
+      solution: "Contributed to a Next.js, React, and TypeScript dashboard with Supabase, Recharts, role-based access, and a backend containing more than 40 API endpoints.",
+      technologies: ["Next.js", "React", "TypeScript", "Supabase", "Recharts"],
       status: "Completed",
       githubUrl: "https://github.com/sara0411/Portfolio",
     },
     {
-      id: "eldercare-med-manager",
-      title: "Medication Schedule & Adherence Assistant",
-      tagline: "Cross-platform mobile application supporting elderly users with scheduled dosage tracking and safety checks.",
-      category: "Mobile & Full-Stack",
-      problem: "Polypharmacy among senior patients often leads to skipped dosages or accidental double dosing due to complicated schedules and poor visibility.",
-      solution: "Created an accessible mobile application in React Native backed by a Node.js REST API and PostgreSQL database. Features high-contrast intuitive controls, persistent notification scheduling, contraindication reminders, and nearby pharmacy geolocation.",
-      technologies: ["React Native", "Node.js", "Express", "PostgreSQL", "TypeScript", "REST APIs"],
-      status: "Active Development",
+      id: "sam-itam-elearning",
+      title: "SAM & ITAM E-Learning Platform",
+      tagline: "Internal learning platform covering software asset management fundamentals.",
+      category: "Enterprise",
+      problem: "The internal project organized training on ITAM fundamentals, IBM licensing and contracts, and CVA and SLR processes.",
+      solution: "Built the platform with Spring Boot, Thymeleaf, Spring Security, JPA, Hibernate, and H2. It includes role-based access, learning modules, quizzes, manager validation, progress tracking, resources, analytics, and email notifications.",
+      technologies: ["Java", "Spring Boot", "Thymeleaf", "Spring Security", "JPA", "H2"],
+      status: "Completed",
       githubUrl: "https://github.com/sara0411/Portfolio",
-    }
+    },
+    {
+      id: "recruitment-cv-platform",
+      title: "Recruitment CV Management Platform",
+      tagline: "Web application for managing candidate CVs during recruitment forums.",
+      category: "Backend Systems",
+      problem: "Recruitment forums needed an application to manage candidate CVs and the associated recruitment workflow.",
+      solution: "Developed an ASP.NET Core MVC application in C# with SQL Server and role-based functionality for recruitment users.",
+      technologies: ["C#", "ASP.NET Core MVC", "SQL Server"],
+      status: "Completed",
+      githubUrl: "https://github.com/sara0411/GestionCVForum",
+    },
   ] as Project[],
 
   skills: [
     {
       title: "Languages",
-      skills: ["Java", "Python", "C#", "JavaScript", "TypeScript", "C", "C++", "SQL"]
+      skills: ["Java", "JavaScript", "TypeScript", "Python", "C#", "Dart", "SQL", "HTML/CSS", "Bash"],
     },
     {
       title: "Backend & APIs",
-      skills: ["REST APIs", "ASP.NET Core", "Node.js", "Express", "Flask", "Entity Framework"]
-    },
-    {
-      title: "Databases",
-      skills: ["PostgreSQL", "SQL Server", "MySQL", "Relational Modeling", "Query Optimization"]
-    },
-    {
-      title: "Enterprise & Automation",
-      skills: ["ServiceNow", "ITSM (Incident, Problem, Change)", "Flow Designer", "Service Catalog", "Workflow Automation"]
-    },
-    {
-      title: "AI & Data",
-      skills: ["Machine Learning", "NLP", "scikit-learn", "TensorFlow / Keras", "Pandas", "NumPy"]
+      skills: ["Spring Boot", "Node.js", "Express", "ASP.NET Core", "REST APIs", "Microservices", "JPA / Hibernate"],
     },
     {
       title: "Frontend & Mobile",
-      skills: ["React", "React Native", "HTML5", "CSS3", "Tailwind CSS", "Responsive Design"]
+      skills: ["React", "Next.js", "Tailwind CSS", "Thymeleaf", "Flutter", "React Native", "Expo"],
     },
     {
-      title: "Engineering Tools",
-      skills: ["Git", "GitHub", "Docker", "Linux", "CI/CD Concepts", "Postman", "VS Code"]
-    }
+      title: "Data & AI",
+      skills: ["PostgreSQL", "Supabase", "SQL Server", "RAG", "NLP", "LSTM / BiLSTM", "Vector Search", "OCR"],
+    },
+    {
+      title: "Enterprise, Cloud & Tools",
+      skills: ["ServiceNow", "BigFix", "IBM ILMT", "Active Directory", "Oracle Cloud Infrastructure", "Docker", "Power BI", "Git"],
+    },
   ] as SkillCategory[],
-
-  principles: [
-    {
-      title: "End-to-End System Reliability",
-      description: "Writing maintainable software means understanding how layers interact—from database transactions and API error handling to business validation and edge cases."
-    },
-    {
-      title: "Pragmatic Automation",
-      description: "Translating ambiguous manual operations into deterministic, auditable, and automated workflows that eliminate friction and human error."
-    },
-    {
-      title: "Applied AI with Technical Restraint",
-      description: "Leveraging machine learning where deterministic algorithms fall short, prioritizing reproducible pipelines and data validation over hype."
-    },
-    {
-      title: "Clean Architecture & Readability",
-      description: "Valuing simple, readable code with explicit boundaries over cleverness. Software must be built so other engineers can inspect, test, and maintain it."
-    }
-  ] as EngineeringPrinciple[],
 
   certifications: [
     {
-      name: "Certified System Administrator (CSA)",
+      name: "ServiceNow Certified System Administrator (CSA)",
       issuer: "ServiceNow",
-      description: "Validates proficiency in ServiceNow platform administration, user management, configuration of ITSM workflows, Flow Designer, Service Catalog, and data management."
-    }
+      description: "ServiceNow platform administration certification.",
+    },
+    {
+      name: "BigFix Foundation",
+      issuer: "HCL",
+      description: "Foundation credential covering the BigFix platform.",
+    },
+    {
+      name: "Oracle Cloud Infrastructure DevOps",
+      issuer: "Oracle",
+      description: "Oracle Cloud Infrastructure DevOps certification.",
+    },
   ] as Certification[],
 
   education: [
     {
-      degree: "Studies in Software Engineering & Computer Science",
-      institution: "Higher Education",
-      focus: "Algorithms, Data Structures, Software Architecture, Database Systems, Operating Systems, and Applied Machine Learning."
-    }
-  ] as EducationItem[]
+      degree: "State Engineering Degree in Computer Science, Information Systems & Networks",
+      institution: "EMSI (École Marocaine des Sciences de l'Ingénieur), Casablanca",
+      period: "2021 to 2026",
+      focus: "Computer science with an information systems and networks orientation.",
+    },
+  ] as EducationItem[],
+
+  leadership: [
+    {
+      organization: "GDG on Campus EMSI Casablanca",
+      role: "Co-Lead (previously Lead / President)",
+      description: "A student developer community organizing technical workshops, events, and hackathons.",
+      highlights: [
+        "Progressed from co-lead to Lead/President and currently serves as co-lead.",
+        "Organized technical workshops, developer events, and career-oriented sessions.",
+      ],
+    },
+    {
+      organization: "OpportunAI Hackathon",
+      role: "Organizer",
+      description: "Organized the hackathon and supported sponsor and community coordination.",
+      highlights: ["Coordinated sponsors and event logistics."],
+    },
+    {
+      organization: "EMSI Career Center",
+      role: "Ambassador",
+      description: "Supported career-oriented student programming.",
+      highlights: [],
+    },
+  ] as LeadershipItem[],
 };
