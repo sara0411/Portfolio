@@ -6,6 +6,7 @@ import ExperienceSection from "@/components/ExperienceSection";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import ProjectsSection from "@/components/ProjectsSection";
+import ProjectEvidenceBand from "@/components/ProjectEvidenceBand";
 import SkillsSection from "@/components/SkillsSection";
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <HeroSection />
       <ChapterTransition number="01" label="Selected work" />
       <ProjectsSection />
+      <ProjectEvidenceBand />
       <ChapterTransition number="02" label="About" />
       <AboutSection />
       <ChapterTransition number="03" label="Experience" />

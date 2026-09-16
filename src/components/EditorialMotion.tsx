@@ -12,6 +12,9 @@ export default function EditorialMotion() {
     const contentItems = Array.from(
       document.querySelectorAll<HTMLElement>("[data-motion-content]"),
     );
+    const signature = document.querySelector<HTMLElement>(
+      "[data-motion-signature]",
+    );
     let frame = 0;
 
     const update = () => {
@@ -29,6 +32,7 @@ export default function EditorialMotion() {
           item.style.removeProperty("--motion-clip");
           item.style.removeProperty("--motion-line");
         });
+        signature?.style.removeProperty("--signature-shift");
         return;
       }
 
@@ -81,6 +85,23 @@ export default function EditorialMotion() {
         );
         item.style.setProperty("--motion-line", progress.toFixed(4));
       });
+
+      if (signature) {
+        const rect = signature.getBoundingClientRect();
+        const progress = Math.min(
+          Math.max(
+            (window.innerHeight - rect.top) / (window.innerHeight + rect.height),
+            0,
+          ),
+          1,
+        );
+        const travel = Math.min(window.innerWidth * 0.24, 320);
+        const shift = travel * (0.5 - progress);
+        signature.style.setProperty(
+          "--signature-shift",
+          `${shift.toFixed(2)}px`,
+        );
+      }
     };
 
     const scheduleUpdate = () => {
@@ -108,6 +129,7 @@ export default function EditorialMotion() {
         item.style.removeProperty("--motion-clip");
         item.style.removeProperty("--motion-line");
       });
+      signature?.style.removeProperty("--signature-shift");
     };
   }, []);
 
