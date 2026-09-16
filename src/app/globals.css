@@ -220,21 +220,55 @@ section:focus {
   gap: 14px;
 }
 
-.theme-control {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  color: var(--text-muted);
-  font-size: 12px;
-}
-
-.theme-control select {
-  min-height: 34px;
-  padding: 4px 27px 4px 9px;
+.theme-cycle {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  padding: 0;
   border: 1px solid var(--line);
   border-radius: 0;
-  background: var(--background);
+  background: transparent;
+  color: var(--text);
   cursor: pointer;
+}
+
+.theme-cycle:hover {
+  border-color: var(--text);
+}
+
+.theme-cycle:focus-visible {
+  outline: 1px solid var(--text);
+  outline-offset: 3px;
+}
+
+.theme-cycle-mark {
+  position: relative;
+  display: block;
+  width: 14px;
+  height: 14px;
+  overflow: hidden;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+}
+
+.theme-cycle[data-preference="system"] .theme-cycle-mark::after {
+  content: "";
+  position: absolute;
+  inset: 0 50% 0 0;
+  background: currentColor;
+}
+
+.theme-cycle[data-preference="light"] .theme-cycle-mark::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+}
+
+.theme-cycle[data-preference="dark"] .theme-cycle-mark {
+  background: currentColor;
 }
 
 .resume-link {
@@ -452,6 +486,7 @@ section:focus {
 }
 
 :root[data-motion="full"] .project-row[data-motion-content="split"] .project-body,
+:root[data-motion="full"] .project-row[data-motion-content="split"] .project-heading,
 :root[data-motion="full"] .experience-row[data-motion-content="split"] .experience-body,
 :root[data-motion="full"] .skill-row[data-motion-content="split"] dd,
 :root[data-motion="full"] .community-row[data-motion-content="split"] > div {
@@ -510,8 +545,9 @@ section:focus {
 .project-row {
   display: grid;
   grid-template-columns: minmax(70px, 0.14fr) minmax(0, 0.86fr);
-  gap: 38px;
-  padding-block: 48px;
+  column-gap: 38px;
+  row-gap: 0;
+  padding-bottom: 48px;
   border-top: 1px solid var(--line);
 }
 
@@ -524,6 +560,32 @@ section:focus {
   font-family: Georgia, Cambria, "Times New Roman", serif;
   font-size: 34px;
   line-height: 1;
+}
+
+.project-folio {
+  position: sticky;
+  z-index: 12;
+  top: 78px;
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(70px, 0.14fr) minmax(0, 0.86fr);
+  gap: 38px;
+  align-items: start;
+  padding-block: 28px 21px;
+  background: var(--background);
+  border-bottom: 1px solid var(--line);
+}
+
+.project-folio::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(var(--project-read-progress, 0));
+  transform-origin: left;
 }
 
 .project-heading {
@@ -550,9 +612,13 @@ section:focus {
 
 .project-tagline {
   max-width: 720px;
-  margin-top: 15px;
+  margin-top: 27px;
   color: var(--text-muted);
   font-size: 17px;
+}
+
+.project-body {
+  grid-column: 2;
 }
 
 .project-evidence {
@@ -713,7 +779,7 @@ section:focus {
   font-family: Georgia, Cambria, "Times New Roman", serif;
   font-size: clamp(43px, 6vw, 76px);
   font-weight: 500;
-  line-height: 1;
+  line-height: 1.08;
   letter-spacing: -0.047em;
 }
 
@@ -1268,6 +1334,14 @@ section:focus {
     transform: translateX(-50%) !important;
   }
 
+  .project-folio {
+    position: static !important;
+  }
+
+  .project-folio::after {
+    display: none;
+  }
+
   .experience-progress span {
     transform: none !important;
   }
@@ -1420,6 +1494,14 @@ section:focus {
     gap: 42px;
   }
 
+  .project-folio {
+    position: static;
+  }
+
+  .project-folio::after {
+    display: none;
+  }
+
   .experience-section {
     padding-block: 94px 102px;
   }
@@ -1455,20 +1537,12 @@ section:focus {
     gap: 14px;
   }
 
-  .wordmark span,
-  .theme-control > span {
+  .wordmark span {
     display: none;
   }
 
   .wordmark strong {
     font-size: 17px;
-  }
-
-  .theme-control select {
-    min-height: 32px;
-    max-width: 86px;
-    padding-left: 7px;
-    font-size: 11px;
   }
 
   .resume-link {
@@ -1523,8 +1597,14 @@ section:focus {
 
   .project-row {
     grid-template-columns: 1fr;
+    gap: 0;
+    padding-bottom: 36px;
+  }
+
+  .project-folio {
+    grid-template-columns: 1fr;
     gap: 18px;
-    padding-block: 36px;
+    padding-block: 27px 19px;
   }
 
   .project-index {
@@ -1533,6 +1613,10 @@ section:focus {
 
   .project-heading {
     display: block;
+  }
+
+  .project-body {
+    grid-column: 1;
   }
 
   .project-status {

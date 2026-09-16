@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 
 type ThemePreference = "system" | "light" | "dark";
 
+const themeOrder: ThemePreference[] = ["system", "light", "dark"];
+
 function resolveTheme(preference: ThemePreference) {
   if (preference !== "system") return preference;
   return window.matchMedia("(prefers-color-scheme: dark)").matches
@@ -38,26 +40,27 @@ export default function ThemeControl() {
     return () => media.removeEventListener("change", handleSystemChange);
   }, []);
 
-  const changeTheme = (nextPreference: ThemePreference) => {
+  const currentIndex = themeOrder.indexOf(preference);
+  const nextPreference = themeOrder[(currentIndex + 1) % themeOrder.length];
+  const currentLabel = preference[0].toUpperCase() + preference.slice(1);
+  const nextLabel = nextPreference[0].toUpperCase() + nextPreference.slice(1);
+
+  const cycleTheme = () => {
     setPreference(nextPreference);
     localStorage.setItem("portfolio-theme", nextPreference);
     applyTheme(nextPreference);
   };
 
   return (
-    <label className="theme-control">
-      <span>Theme</span>
-      <select
-        aria-label="Color theme"
-        value={preference}
-        onChange={(event) =>
-          changeTheme(event.target.value as ThemePreference)
-        }
-      >
-        <option value="system">System</option>
-        <option value="light">Light</option>
-        <option value="dark">Dark</option>
-      </select>
-    </label>
+    <button
+      className="theme-cycle"
+      type="button"
+      data-preference={preference}
+      aria-label={`Theme: ${currentLabel}. Switch to ${nextLabel}.`}
+      title={`${currentLabel} theme`}
+      onClick={cycleTheme}
+    >
+      <span className="theme-cycle-mark" aria-hidden="true" />
+    </button>
   );
 }

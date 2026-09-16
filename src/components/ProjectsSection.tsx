@@ -18,10 +18,10 @@ export default function ProjectsSection() {
               data-motion-content="split"
               key={project.id}
             >
-              <div className="project-index">
-                {String(index + 1).padStart(2, "0")}
-              </div>
-              <div className="project-body">
+              <header className="project-folio">
+                <div className="project-index">
+                  {String(index + 1).padStart(2, "0")}
+                </div>
                 <div className="project-heading">
                   <div>
                     <p className="project-category">{project.category}</p>
@@ -29,6 +29,8 @@ export default function ProjectsSection() {
                   </div>
                   <p className="project-status">{project.status}</p>
                 </div>
+              </header>
+              <div className="project-body">
                 <p className="project-tagline">{project.tagline}</p>
                 <div className="project-evidence" aria-label="Project evidence">
                   <span>Evidence</span>

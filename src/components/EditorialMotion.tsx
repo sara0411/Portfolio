@@ -12,6 +12,9 @@ export default function EditorialMotion() {
     const contentItems = Array.from(
       document.querySelectorAll<HTMLElement>("[data-motion-content]"),
     );
+    const projectRows = Array.from(
+      document.querySelectorAll<HTMLElement>(".project-row"),
+    );
     const signature = document.querySelector<HTMLElement>(
       "[data-motion-signature]",
     );
@@ -35,6 +38,9 @@ export default function EditorialMotion() {
           item.style.removeProperty("--motion-clip");
           item.style.removeProperty("--motion-line");
         });
+        projectRows.forEach((project) =>
+          project.style.removeProperty("--project-read-progress"),
+        );
         signature?.style.removeProperty("--signature-shift");
         experienceSection?.style.removeProperty("--experience-progress");
         return;
@@ -88,6 +94,18 @@ export default function EditorialMotion() {
           `${(100 * remaining).toFixed(2)}%`,
         );
         item.style.setProperty("--motion-line", progress.toFixed(4));
+      });
+
+      projectRows.forEach((project) => {
+        const rect = project.getBoundingClientRect();
+        const progress = Math.min(
+          Math.max((96 - rect.top) / Math.max(rect.height - 180, 1), 0),
+          1,
+        );
+        project.style.setProperty(
+          "--project-read-progress",
+          progress.toFixed(4),
+        );
       });
 
       if (signature) {
@@ -149,6 +167,9 @@ export default function EditorialMotion() {
         item.style.removeProperty("--motion-clip");
         item.style.removeProperty("--motion-line");
       });
+      projectRows.forEach((project) =>
+        project.style.removeProperty("--project-read-progress"),
+      );
       signature?.style.removeProperty("--signature-shift");
       experienceSection?.style.removeProperty("--experience-progress");
     };
