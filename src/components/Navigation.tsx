@@ -5,9 +5,9 @@ import ThemeControl from "./ThemeControl";
 
 const navigationItems = [
   { id: "projects", label: "Work" },
-  { id: "about", label: "About" },
   { id: "experience", label: "Experience" },
   { id: "skills", label: "Skills" },
+  { id: "about", label: "About" },
   { id: "contact", label: "Contact" },
 ];
 
@@ -49,12 +49,6 @@ export default function Navigation() {
         </nav>
         <div className="header-actions">
           <ThemeControl />
-          <a
-            className="resume-link"
-            href="#contact"
-          >
-            Available
-          </a>
           <details className="mobile-menu" ref={mobileMenu}>
             <summary>Menu</summary>
             <nav aria-label="Mobile navigation">{links}</nav>

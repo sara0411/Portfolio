@@ -1,16 +1,12 @@
 export interface Project {
   id: string;
   title: string;
-  tagline: string;
-  category: "Machine Learning" | "Backend Systems" | "Mobile & Full-Stack" | "Enterprise";
-  problem: string;
-  contribution: string;
-  solution: string;
-  evidence: string;
+  where: string;
+  paragraphs: string[];
   technologies: string[];
-  status: "Completed" | "Active Development" | "Deployed";
   githubUrl?: string;
-  liveUrl?: string;
+  features?: { title: string; text: string }[];
+  closing?: string;
 }
 
 export interface ExperienceItem {
@@ -54,61 +50,52 @@ export const PORTFOLIO_DATA = {
     name: "Sara Ferraa",
     portrait: "/sara-ferraa.jpg",
     title: "Software Engineer",
-    secondaryTitle: "Backend · Full Stack · Mobile · Applied AI · Enterprise Automation",
-    bioShort: "I am a recent software engineering graduate and current Software Engineering Intern at Automai. My work spans backend systems, enterprise applications, product interfaces, and applied AI.",
+    intro: [
+      "I build backend and enterprise software that holds up in production: a C# and C++ test-automation product today, Java and Spring Boot applications before that. I also organise GDG Casablanca.",
+    ],
     email: "ferraasara1@gmail.com",
     github: "https://github.com/sara0411",
     linkedin: "https://www.linkedin.com/in/sara-ferraa-0aa73623a/",
+    cv: "/sara-ferraa-cv.pdf",
     location: "Casablanca, Morocco",
-    availability: "Backend and Enterprise Software Engineering",
-  },
-
-  about: {
-    paragraphs: [
-      "I am a recent software engineering graduate from EMSI Casablanca. I work across backend and full-stack development, mobile applications, applied AI, and enterprise automation, with Java and Spring Boot as my primary backend stack.",
-      "At Automai, I am responsible for a guided authoring feature in a C# and WinForms desktop application. The work crosses UI, persistence, code generation, and the separate runtime that executes generated automation.",
-      "My Deloitte internship combined Software Asset Management work with engineering. I worked with IBM licensing environments, ServiceNow SAM Pro, and BigFix while building an internal Spring Boot learning platform with local RAG, document processing, and reporting workflows.",
-    ],
   },
 
   experience: [
     {
       period: "August 2026 to present",
-      role: "Software Engineering Intern",
-      organization: "Automai",
+      role: "Software Engineer",
+      organization: "Automai Corp",
       type: "Software Engineering",
       highlights: [
-        "Responsible for a guided authoring feature that compiles user-taught workflows into automation executed by a separate runtime, working across UI, persistence, and code generation.",
-        "Improved reliability ahead of release by tracing generated output through its consuming runtime and root-causing and fixing approximately 30 defects.",
-        "Shipped save-and-resume support to replace a flow that forced users to discard unfinished work.",
-        "Reconciled the feature with its documentation and runtime contract, then helped unblock a release by tracing a fresh-install build failure that left a core service non-functional.",
+        "Own the Journey feature in ScenarioBuilder, a wizard that generates start, login and logout automations for web, desktop and Citrix/RDP applications.",
+        "Delivered Journey Profile versioning and packaging, the Web Service Client enhancements across three repositories, and reworked control recognition in C# and the C++ OCR library.",
+        "Root-caused and tracked more than 100 defects across releases 26.8.03 to 26.11.01, and diagnosed a customer's failing robot runs down to the C++ runtime.",
+        "Co-own release preparation, wrote the Journey, Web Service Client and patch-release test suites, and built the team's Claude Code toolkit.",
       ],
-      skills: ["C#", "WinForms", "Persistence", "Code Generation", "Runtime Integration", "Debugging"],
+      skills: ["C#", ".NET WinForms", "C++", "OCR", "Python/Django", "Inno Setup"],
     },
     {
       period: "February to July 2026",
-      role: "Software Asset Management Intern",
-      organization: "Deloitte Extended Services Morocco",
+      role: "Software Engineering Intern",
+      organization: "Deloitte Morocco Cyber Center",
       type: "Enterprise Platform",
       highlights: [
-        "Worked with IBM software licensing environments, including ILMT, BigFix, and Passport Advantage concepts.",
-        "Used ServiceNow SAM Pro, Flexera, USU, and Active Directory for software and IT asset work.",
-        "Performed contract and licensing analysis and built reporting with Power BI, Excel, and VBA.",
-        "Designed and built a Spring Boot learning platform with role-based modules, assessment, local RAG, document processing, and reporting workflows.",
+        "Architected and built an enterprise SAM skills platform with Java 21, Spring Boot 3, React and PostgreSQL, with role-based access control, authentication and session management.",
+        "Implemented a local RAG knowledge assistant with LangChain4j, Ollama and ChromaDB.",
+        "Built a Python/FastAPI OCR pipeline for IBM AS/400 licensing reports and an Apache POI module that generates customised Project Management Plans.",
       ],
-      skills: ["Java", "Spring Boot", "ServiceNow SAM Pro", "IBM Licensing", "BigFix", "LangChain4j", "Power BI"],
+      skills: ["Java 21", "Spring Boot 3", "Spring Security", "React", "PostgreSQL", "LangChain4j", "FastAPI"],
     },
     {
-      period: "Previous",
+      period: "May to September 2025",
       role: "Software Engineering Intern",
       organization: "SLTVerse",
       type: "Software Engineering",
       highlights: [
-        "Built mobile features for PingPay/SLTPay with React Native, Expo, and TypeScript against a Node.js and Express backend.",
-        "Integrated payment, identity, blockchain, and real-time services including Stripe, Plaid, Ethers.js, WebSockets, and ShuftiPro.",
-        "Contributed to a Next.js dashboard with role-based access and more than 40 API endpoints.",
+        "Developed PingPay, a React Native multi-payment application integrating Supabase, Stripe, Plaid and Ethers.js across card, bank, ACH and crypto payment workflows.",
+        "Built a privacy-preserving authentication prototype with Semaphore, zkPass, Next.js and Supabase that verifies users without exposing their credentials.",
       ],
-      skills: ["React Native", "TypeScript", "Node.js", "Next.js", "Supabase", "PostgreSQL"],
+      skills: ["React Native", "Expo", "TypeScript", "Supabase", "Stripe", "Plaid", "Ethers.js"],
     },
     {
       period: "Previous",
@@ -116,8 +103,7 @@ export const PORTFOLIO_DATA = {
       organization: "Attijariwafa Bank",
       type: "Software Engineering",
       highlights: [
-        "Developed a CV management web application for recruitment forums using ASP.NET Core MVC, C#, and SQL Server.",
-        "Implemented role-based functionality for recruitment workflows.",
+        "Developed a CV management web application for recruitment forums using ASP.NET Core MVC, C# and SQL Server, with role-based access for the recruitment workflow.",
       ],
       skills: ["ASP.NET Core MVC", "C#", "SQL Server"],
     },
@@ -125,89 +111,117 @@ export const PORTFOLIO_DATA = {
 
   projects: [
     {
-      id: "ai-log-analyzer",
-      title: "AI Log Analyzer",
-      tagline: "Sequence model for classifying anomalous system log behavior.",
-      category: "Machine Learning",
-      problem: "The academic project explored how to classify security-focused behavior in approximately 1 GB of system logs while improving the quality of the source data used for evaluation.",
-      contribution: "Worked in a two-person team to prepare the dataset and develop and evaluate the sequence-model pipeline for log classification.",
-      solution: "Processed Syslog data and applied NLP with LSTM and BiLSTM sequence models. The reported evaluation reached approximately 91.3% accuracy.",
-      evidence: "Approximately 1 GB of logs and 91.3% reported evaluation accuracy",
-      technologies: ["Python", "LSTM", "BiLSTM", "NLP", "Machine Learning"],
-      status: "Completed",
-      githubUrl: "https://github.com/sara0411/cybersec-log-analyzer",
-    },
-    {
-      id: "pingpay-dashboard",
-      title: "PingPay Dashboard",
-      tagline: "Full-stack administration and analytics dashboard for a fintech product.",
-      category: "Backend Systems",
-      problem: "PingPay required distinct application experiences and permissions for users, businesses, and administrators.",
-      contribution: "Contributed across the Next.js dashboard, its role-based product flows, and the supporting backend APIs.",
-      solution: "Contributed to a Next.js, React, and TypeScript dashboard with Supabase, Recharts, role-based access, and a backend containing more than 40 API endpoints.",
-      evidence: "More than 40 backend API endpoints",
-      technologies: ["Next.js", "React", "TypeScript", "Supabase", "Recharts"],
-      status: "Completed",
+      id: "automai-guided-authoring",
+      title: "Teaching software to automate itself",
+      where: "Automai Corp, Software Engineer, August 2026 to now",
+      paragraphs: [
+        "Automai builds a test and process automation platform. I own Journey, a wizard in ScenarioBuilder where someone demonstrates how to start, log in to and log out of an application (web, desktop or Citrix/RDP) and gets working automations out of it.",
+        "What the user teaches is saved, compiled into scripts, and run by a separate C++ robot runtime. Most of what I build has to hold together across all four, and across several repositories.",
+      ],
+      features: [
+        {
+          title: "Save and resume",
+          text: "An unfinished Journey used to be lost when the wizard closed. It is now kept as a draft that can be reopened, renamed or discarded cleanly.",
+        },
+        {
+          title: "Versioning and packaging",
+          text: "Stable IDs for scripts and profiles, content fingerprints, one-file package export and migration of older automations, with the matching change in the C++ runtime and the installer, so scripts keep their identity through renames, regeneration and upgrades.",
+        },
+        {
+          title: "An API step for real requests",
+          text: "The Web Service Client, end to end across three repositories: query parameters, authentication, body types, expected status codes and response headers, from the WinForms options to the C++ robot and the installer's action definitions.",
+        },
+        {
+          title: "Knowing what was clicked",
+          text: "Control recognition in C# and the C++ OCR library now finds fields, checkboxes and buttons with pale or dark borders on the first click, anywhere in the window. I also fixed false matches in the image search and moved calibration to a background queue so the recorder no longer freezes.",
+        },
+        {
+          title: "Diagnosing what customers see",
+          text: "I reproduced a customer's failing robot runs (188 of 188) on a VM and traced them to variable-name handling in the C++ runtime, with a workaround and a fix proposal. An audit of the upload path also turned up a legacy route that accepted uploads without login; it has since been removed.",
+        },
+        {
+          title: "Releases and tooling",
+          text: "More than 100 defects root-caused and tracked across releases 26.8.03 to 26.11.01. I co-own release preparation, and I built the team's Claude Code toolkit: git-safety hooks with 64 tests, 14 skills for root-cause, verification and release checks, and a fix index of more than 21,000 symbols.",
+        },
+      ],
+      technologies: ["C#", ".NET WinForms", "C++", "OCR", "Inno Setup"],
     },
     {
       id: "sam-itam-elearning",
-      title: "SAM & ITAM E-Learning Platform",
-      tagline: "Internal learning and automation platform for Software Asset Management consultants.",
-      category: "Enterprise",
-      problem: "The internal project organized training and operational knowledge for more than 60 consultants working with ITAM, IBM licensing, contracts, CVA, and SLR processes.",
-      contribution: "Designed and built the platform, including authentication, learning progression, assessment, manager validation, analytics, local RAG, OCR-assisted document processing, and reporting workflows.",
-      solution: "Built the core platform with Java 21, Spring Boot, Thymeleaf, Spring Security, JPA, and H2. Integrated LangChain4j, Ollama, and ChromaDB for local retrieval, plus Python, FastAPI, Tesseract, and Apache POI for document and spreadsheet automation.",
-      evidence: "Designed for 60+ consultants with role-based learning, RAG, and document automation",
-      technologies: ["Java 21", "Spring Boot", "LangChain4j", "Ollama", "ChromaDB", "FastAPI", "Apache POI"],
-      status: "Completed",
+      title: "A skills platform for a SAM team",
+      where: "Deloitte Morocco Cyber Center, 2026, my final-year project",
+      paragraphs: [
+        "An internal platform for the Software Asset Management team: learning paths, quizzes, manager validation, analytics and a knowledge assistant. I architected and built it during my internship.",
+        "It runs on Java 21 and Spring Boot 3 with React and PostgreSQL, with role-based access control, authentication and session management. The knowledge assistant is local RAG with LangChain4j, Ollama and ChromaDB. Alongside it I built a FastAPI OCR pipeline that reads IBM AS/400 licensing reports (detecting columns and merging staggered headers) and an Apache POI module that writes Project Management Plans. The code is private.",
+      ],
+      technologies: ["Java 21", "Spring Boot 3", "React", "PostgreSQL", "LangChain4j", "Ollama", "ChromaDB", "FastAPI"],
     },
     {
-      id: "recruitment-cv-platform",
-      title: "Recruitment CV Management Platform",
-      tagline: "Web application for managing candidate CVs during recruitment forums.",
-      category: "Backend Systems",
-      problem: "Recruitment forums needed an application to manage candidate CVs and the associated recruitment workflow.",
-      contribution: "Developed the application and implemented role-based access for its recruitment workflow.",
-      solution: "Developed an ASP.NET Core MVC application in C# with SQL Server and role-based functionality for recruitment users.",
-      evidence: "Public source for the role-based recruitment application",
-      technologies: ["C#", "ASP.NET Core MVC", "SQL Server"],
-      status: "Completed",
-      githubUrl: "https://github.com/sara0411/GestionCVForum",
+      id: "ai-log-analyzer",
+      title: "Log classifier",
+      where: "School project, with one teammate",
+      paragraphs: [
+        "We classified security events in about 1 GB of system logs. The text model is a two-layer bidirectional LSTM behind a Flask interface.",
+        "It reached 91.3% accuracy on the held-out test split. The labels came from heuristics and we didn't keep precision or recall, so I treat that number as a rough one.",
+      ],
+      technologies: ["Python", "TensorFlow", "Flask"],
+      githubUrl: "https://github.com/sara0411/cybersec-log-analyzer",
     },
     {
       id: "pagemate",
       title: "PageMate",
-      tagline: "A mobile reading product built around private libraries and shared reading.",
-      category: "Mobile & Full-Stack",
-      problem: "Readers need one place to manage private books, track progress, annotate pages, and share reading experiences with controlled visibility.",
-      contribution: "Designed the product, its mobile experience, data model, access rules, and the reading and social flows.",
-      solution: "Building the application in Flutter with Supabase authentication, PostgreSQL, private storage, signed document access, realtime features, notes, highlights, and reading progress.",
-      evidence: "Active Flutter and Supabase implementation with documented product and access architecture",
-      technologies: ["Flutter", "Dart", "Supabase", "PostgreSQL", "Realtime"],
-      status: "Active Development",
+      where: "Personal project, in progress",
+      paragraphs: [
+        "A reading app in Flutter: a private library, notes and highlights, reading progress, and reading with other people. Supabase handles authentication, PostgreSQL, private storage with signed access, and realtime. Not public yet.",
+      ],
+      technologies: ["Flutter", "Dart", "Supabase", "PostgreSQL"],
+    },
+    {
+      id: "pingpay",
+      title: "PingPay",
+      where: "SLTVerse, May to September 2025",
+      paragraphs: [
+        "A React Native app that pays four ways: card, bank, ACH and crypto, through Stripe, Plaid and Ethers.js, on Supabase.",
+        "I also built a privacy-preserving sign-in prototype with Semaphore and zkPass that verifies a user without exposing their credentials. Both are private.",
+      ],
+      technologies: ["React Native", "Expo", "TypeScript", "Supabase", "Stripe", "Plaid", "Ethers.js"],
+    },
+    {
+      id: "recruitment-cv-platform",
+      title: "CV management for recruitment forums",
+      where: "Attijariwafa Bank internship",
+      paragraphs: [
+        "An ASP.NET Core MVC application with SQL Server for managing the candidate CVs collected at recruitment forums, with role-based access.",
+      ],
+      technologies: ["C#", "ASP.NET Core MVC", "SQL Server"],
+      githubUrl: "https://github.com/sara0411/GestionCVForum",
     },
   ] as Project[],
 
   skills: [
     {
       title: "Languages",
-      skills: ["Java", "JavaScript", "TypeScript", "Python", "C#", "Dart", "SQL", "HTML/CSS", "Bash"],
+      skills: ["C#", "C++", "Java", "Python", "TypeScript", "SQL"],
     },
     {
-      title: "Backend & APIs",
-      skills: ["Spring Boot", "Node.js", "Express", "FastAPI", "ASP.NET Core", "REST APIs", "Microservices", "JPA / Hibernate"],
+      title: "Backend & desktop",
+      skills: ["Spring Boot", "Spring Security", "REST APIs", "JPA/Hibernate", "Maven", "FastAPI", "Django", ".NET WinForms", "Inno Setup"],
     },
     {
-      title: "Frontend & Mobile",
-      skills: ["React", "Next.js", "Tailwind CSS", "Thymeleaf", "Flutter", "React Native", "Expo"],
+      title: "Engineering",
+      skills: ["Debugging", "root-cause analysis", "persistence", "authentication and RBAC", "cross-component contracts", "testing", "release management", "OCR and image matching", "RDP/Citrix"],
     },
     {
       title: "Data & AI",
-      skills: ["PostgreSQL", "Supabase", "SQL Server", "RAG", "LangChain4j", "Ollama", "ChromaDB", "NLP", "Vector Search", "OCR"],
+      skills: ["PostgreSQL", "Supabase", "RAG", "LangChain4j", "Ollama", "ChromaDB", "Claude Code (skills, hooks, subagents)"],
     },
     {
-      title: "Enterprise, Cloud & Tools",
-      skills: ["ServiceNow", "BigFix", "IBM ILMT", "Active Directory", "Oracle Cloud Infrastructure", "GCP", "Docker", "Power BI", "Git"],
+      title: "Frontend & mobile",
+      skills: ["React", "Next.js", "React Native", "Flutter", "HTML/CSS"],
+    },
+    {
+      title: "Tools & platforms",
+      skills: ["Git/GitHub", "Jira", "Confluence", "Linux", "Oracle OCI", "AWS fundamentals", "ServiceNow SAM Pro", "BigFix", "IBM ILMT"],
     },
   ] as SkillCategory[],
 
@@ -218,14 +232,14 @@ export const PORTFOLIO_DATA = {
       description: "ServiceNow platform administration certification.",
     },
     {
-      name: "BigFix Foundation",
-      issuer: "HCL",
-      description: "Foundation credential covering the BigFix platform.",
-    },
-    {
       name: "Oracle Cloud Infrastructure DevOps Professional",
       issuer: "Oracle",
       description: "Oracle Cloud Infrastructure DevOps certification.",
+    },
+    {
+      name: "BigFix Foundation",
+      issuer: "HCL",
+      description: "Foundation credential covering the BigFix platform.",
     },
     {
       name: "IBM Licensing Expertise",
@@ -242,34 +256,35 @@ export const PORTFOLIO_DATA = {
 
   education: [
     {
-      degree: "State Engineering Degree in Computer Science, Information Systems & Networks",
-      institution: "EMSI (École Marocaine des Sciences de l'Ingénieur), Casablanca",
-      period: "2021 to 2026",
-      focus: "MIAGE-oriented software engineering, information systems, and networks curriculum.",
+      degree: "Five-year Software Engineering degree (MIAGE, Master's equivalent)",
+      institution: "EMSI Casablanca",
+      period: "October 2021 to July 2026",
+      focus: "Final-year project: the SAM skills platform at Deloitte.",
     },
   ] as EducationItem[],
 
   leadership: [
     {
       organization: "GDG on Campus EMSI Casablanca",
-      role: "Former Lead and Co-Lead",
-      description: "Led and supported a student developer community organizing technical workshops, events, and hackathons.",
+      role: "2024 to 2026",
+      description: "The campus chapter of Google Developer Groups.",
       highlights: [
-        "Progressed from co-lead to Lead/President and currently serves as co-lead.",
-        "Organized technical workshops, developer events, and career-oriented sessions.",
+        "2024, co-lead: organised workshops and a cybersecurity bootcamp.",
+        "2025, lead: led a hackathon together with a series of workshops.",
+        "2026, co-lead again.",
       ],
     },
     {
       organization: "GDG Casablanca",
-      role: "Organizer",
-      description: "Supports the city developer community and its technical programming.",
+      role: "Organiser, 2026",
+      description: "The city chapter of Google Developer Groups.",
       highlights: [],
     },
     {
       organization: "OpportunAI Hackathon",
-      role: "Organizer",
-      description: "Organized the hackathon and supported sponsor and community coordination.",
-      highlights: ["Coordinated sponsors and event logistics."],
+      role: "Organiser",
+      description: "Organised the hackathon and supported sponsor and community coordination.",
+      highlights: [],
     },
     {
       organization: "EMSI Career Center",

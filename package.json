@@ -12,7 +12,8 @@
   "dependencies": {
     "next": "^15.4.11",
     "react": "^19.1.2",
-    "react-dom": "^19.1.2"
+    "react-dom": "^19.1.2",
+    "three": "^0.169.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -20,6 +21,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/three": "^0.169.0",
     "eslint": "^9",
     "eslint-config-next": "^15.4.11",
     "tailwindcss": "^4",

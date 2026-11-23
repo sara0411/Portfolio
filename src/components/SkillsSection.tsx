@@ -1,22 +1,15 @@
 import { PORTFOLIO_DATA } from "@/data/portfolioData";
-import SectionHeading from "./SectionHeading";
+import Chapter from "./Chapter";
 
 export default function SkillsSection() {
   return (
-    <section id="skills" tabIndex={-1} className="portfolio-section page-width">
-      <SectionHeading
-        label="Skills"
-        title="Languages, platforms, and tools."
-      />
-      <dl className="skills-list">
+    <section id="skills" tabIndex={-1} className="portfolio-section">
+      <Chapter title="Skills" />
+      <dl className="plain-list page-width">
         {PORTFOLIO_DATA.skills.map((category) => (
-          <div
-            className="skill-row"
-            data-motion-content="split"
-            key={category.title}
-          >
+          <div data-reveal key={category.title}>
             <dt>{category.title}</dt>
-            <dd>{category.skills.join(" / ")}</dd>
+            <dd>{category.skills.join(", ")}</dd>
           </div>
         ))}
       </dl>

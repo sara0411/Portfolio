@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { PORTFOLIO_DATA } from "@/data/portfolioData";
+import HeroWorld from "./HeroWorld";
 
 export default function HeroSection() {
   const { personal } = PORTFOLIO_DATA;
@@ -7,41 +7,34 @@ export default function HeroSection() {
   return (
     <section id="hero" className="hero page-width" aria-labelledby="hero-title">
       <div className="hero-copy">
-        <p className="current-role">Recent graduate · Currently at Automai</p>
-        <p className="hero-name">{personal.name}</p>
-        <h1 id="hero-title">
-          I build dependable backend systems, mobile products, and applied AI
-          tools.
+        <p className="hero-kicker">Software engineer, {personal.location}</p>
+        <h1 id="hero-title" aria-label={personal.name}>
+          <span className="line" aria-hidden="true">
+            <span>Sara</span>
+          </span>
+          <span className="line" aria-hidden="true">
+            <span>Ferraa</span>
+          </span>
         </h1>
-        <p className="hero-description">{personal.bioShort}</p>
-        <div className="hero-actions">
-          <a className="primary-action" href="#projects">
-            View selected work
+        {personal.intro.map((paragraph) => (
+          <p className="hero-lede" key={paragraph}>
+            {paragraph}
+          </p>
+        ))}
+        <p className="hero-links">
+          <a href={`mailto:${personal.email}`}>{personal.email}</a>
+          <a href={personal.cv} download>
+            Download CV
           </a>
-          <a
-            className="secondary-action"
-            href={`mailto:${personal.email}`}
-          >
-            Email me
+          <a href={personal.github} target="_blank" rel="noopener noreferrer">
+            GitHub
           </a>
-        </div>
-        <p className="hero-location">Based in {personal.location}</p>
+          <a href={personal.linkedin} target="_blank" rel="noopener noreferrer">
+            LinkedIn
+          </a>
+        </p>
       </div>
-
-      <figure className="hero-portrait">
-        <div className="portrait-frame">
-          <Image
-            src={personal.portrait}
-            alt="Portrait of Sara Ferraa"
-            fill
-            priority
-            sizes="(max-width: 780px) 88vw, 420px"
-          />
-        </div>
-        <figcaption>
-          Backend, full stack, mobile, applied AI, and enterprise automation.
-        </figcaption>
-      </figure>
+      <HeroWorld />
     </section>
   );
 }
